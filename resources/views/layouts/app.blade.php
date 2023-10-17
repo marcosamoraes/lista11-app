@@ -5,27 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="author" content="Achei16">
+    <meta name="author" content="Lista11">
 
-    <title>{{ config('app.name', 'Achei 16') }} - @yield('title')</title>
+    <title>{{ config('app.name', 'Lista 11') }} - @yield('title')</title>
 
     @hasSection('description')
         <meta name="description" content="@yield('description')">
     @else
-        <meta name="description" content="Guia de empresas em Ribeirão Preto/SP - http://www.achei16.com.br">
+        <meta name="description" content="Guia de empresas">
     @endif
 
     @hasSection('abstract')
         <meta name="abstract" content="@yield('abstract')">
     @else
-        <meta name="abstract" content="guia, hotel, restaurante, empresas em Ribeirão Preto/SP.">
+        <meta name="abstract" content="guia, hotel, restaurante, empresas.">
     @endif
 
     @hasSection('keywords')
         <meta name="keywords" content="@yield('keywords')">
     @else
-        <meta name="keywords"
-            content="hotel em Ribeirão Preto, achei 16, restaurante, academia, veículos, bar, som automotivo, restaurante em ribeirão preto, cinema, o que fazer em Ribeirão Preto, lojas,  ">
+        <meta name="keywords" content="hotel, achei 16, restaurante, academia, veículos, bar, som automotivo, restaurante em ribeirão preto, cinema, o que fazer, lojas">
     @endif
 
     @hasSection('image')
@@ -41,36 +40,44 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="favicon.ico">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="favicon.ico">
 
-    <!-- GOOGLE WEB FONT -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- BASE CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css?v=2" rel="stylesheet">
-
-    <!-- YOUR CUSTOM CSS -->
-    <link href="/css/custom.css?v=2" rel="stylesheet">
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/color.css">
 </head>
 
 <body>
     @include('sweetalert::alert')
+    <!--loader-->
+    <div class="loader-wrap">
+        <div class="loader-inner">
+            <div class="loader-inner-cirle"></div>
+        </div>
+    </div>
+    <!--loader end-->
+    <!-- main start  -->
+    <div id="main">
+        @include('components.header')
 
-    @include('components.header')
+        <!-- wrapper-->
+        <div id="wrapper">
+            @yield('content')
+        </div>
+        <!-- wrapper end-->
 
-    @yield('content')
+        @include('components.footer')
 
-    @include('components.footer')
+        <a class="to-top"><i class="fas fa-caret-up"></i></a>
+    </div>
+    <!-- Main end -->
 
-    <div id="toTop"></div><!-- Back to top button -->
-
-    <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
-
-    <!-- COMMON SCRIPTS -->
-    <script src="/js/common_scripts.min.js"></script>
-    <script src="/js/common_func.js"></script>
-    <script src="/assets/validate.js"></script>
+    <!--=============== scripts  ===============-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places&callback=initAutocomplete"></script>
+    <script src="js/map-single.js"></script>
 
     @stack('scripts')
 </body>

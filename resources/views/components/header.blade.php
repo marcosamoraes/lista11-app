@@ -1,43 +1,43 @@
-<header
-    class="clearfix {{ !request()->route()->named('listing') &&!request()->route()->named('listing.view') &&!request()->route()->named('register')? 'header element_to_stick': 'header_in' }}">
-    <div class="container">
-        <div id="logo">
-            <a href="/">
-                <img src="/img/logo.webp" height="50" alt="" class="logo_normal">
-                @if (
-                    !request()->route()->named('listing') &&
-                        !request()->route()->named('listing.view') &&
-                        !request()->route()->named('register'))
-                    <img src="/img/logo.webp" height="50" alt="" class="logo_sticky">
-                @endif
-                <img src="/img/google-partner-sm.webp" height="50" alt="">
-            </a>
+<!-- header -->
+<header class="main-header">
+    <!-- logo-->
+    <a href="index.html" class="logo-holder"><img src="/logo.webp" alt=""></a>
+    <!-- logo end-->
+    <!-- header opt -->
+    <a href="{{ route('register') }}" class="add-list color-bg">Apareça no Google</a>
+    <a href="{{ env('ADMIN_URL') }}">
+        <div class="show-reg-form avatar-img" data-srcav="images/avatar/3.jpg"><i class="fal fa-user"></i>Entrar</div>
+    </a>
+    <!-- header opt end-->
+    <!-- nav-button-wrap-->
+    <div class="nav-button-wrap color-bg">
+        <div class="nav-button">
+            <span></span><span></span><span></span>
         </div>
-        <!-- /top_menu -->
-        <a href="#0" class="open_close" style="color: black">
-            <i class="icon_menu"></i><span>Menu</span>
-        </a>
-        <nav class="main-menu">
-            <div id="header_menu">
-                <a href="#" class="open_close">
-                    <i class="icon_close" style="color: black"></i><span>Menu</span>
-                </a>
-                <a href="/"><img src="/img/logo.webp" height="50" alt=""></a>
-            </div>
-            <ul>
+    </div>
+    <!-- nav-button-wrap end-->
+    <!--  navigation -->
+    <div class="nav-holder main-menu">
+        <nav>
+            <ul class="no-list-style">
                 <li>
-                    <a href="/">Home</a>
+                    <a href="{{ route('index') }}" class="act-link">Home</a>
                 </li>
                 <li>
-                    <a href="/empresas">Empresas</a>
+                    <a href="{{ route('listing') }}" class="act-link">Locais</a>
                 </li>
                 <li>
-                    <a href="/cadastro">Cadastre sua empresa</a>
+                    <a href="#" class="act-link">Tour360º</a>
                 </li>
                 <li>
-                    <a href="/contato">Contato</a>
+                    <a href="#" class="act-link">Blog</a>
+                </li>
+                <li>
+                    <a href="{{ route('contact') }}" class="act-link">Contato</a>
                 </li>
             </ul>
         </nav>
     </div>
+    <!-- navigation  end -->
 </header>
+<!-- header end-->

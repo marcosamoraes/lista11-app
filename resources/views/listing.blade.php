@@ -1,127 +1,157 @@
 @extends('layouts.app')
 
-@section('title', 'Ribeirão Preto - Restaurante, hotel, bares, lojas, oficina, som e muito mais...')
+@section('title', '...')
 
 @section('content')
-    <main>
-        <div class="page_header element_to_stick">
+    <!-- content-->
+    <div class="content">
+        <!--  section  -->
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <div class="bg par-elem "  data-bg="images/bg/banner1.png" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay op7"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 col-lg-7 col-md-7 d-none d-md-block">
-                        <div class="breadcrumbs">
-                            <ul>
-                                <li><a href="/">Início</a></li>
-                                <li>Empresas</li>
-                            </ul>
-                        </div>
-                        <h1>{{ $companies->count() }} empresas</h1>
-                    </div>
-                    <div class="col-xl-4 col-lg-5 col-md-5">
-                        <form>
-                            @foreach (request()->all() as $key => $value)
-                                @if ($key != 'city')
-                                    @foreach ((array) $value as $v)
-                                        <input type="hidden" name="{{ $key }}[]" value="{{ $v }}">
-                                    @endforeach
-                                @endif
-                            @endforeach
-                            <div class="search_bar_list">
-                                <input type="text" class="form-control" name="city" placeholder="Nome da empresa, endereço ou cidade..." value="{{ request()->city }}">
-                                <input type="submit" value="Busca">
-                            </div>
-                        </form>
-                    </div>
+                <div class="section-title center-align big-title">
+                    <h2><span>Locais</span></h2>
+                    <span class="section-separator"></span>
                 </div>
-                <!-- /row -->
             </div>
-        </div>
-        <!-- /page_header -->
-        <div class="container margin_30_40">
-            <div class="row">
-                <aside class="col-lg-3" id="sidebar_fixed">
-                    <div class="filter_col">
-                        <div class="inner_bt"><a href="#" class="open_filters"><i class="icon_close"></i></a></div>
-                        <form>
-                            <input type="hidden" name="city" value="{{ request()->city }}">
-                            <div class="filter_type">
-                                <h4><a href="#filter_1" data-bs-toggle="collapse" class="opened">Categorias</a></h4>
-                                <div class="collapse show" id="filter_1">
-                                    <ul>
-                                        @foreach ($categories as $category)
-                                            <li>
-                                                <label class="container_check">{{ $category->name }} <small>{{ $category->companies_count }}</small>
-                                                    <input type="checkbox" name="cat[]" value="{{ $category->id }}" {{ in_array($category->id, (array) request()->cat) ? 'checked' : '' }}>
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <!-- /filter_type -->
-                            </div>
-                            <!-- /filter_type -->
-                            <div class="buttons">
-                                <button type="submit" class="btn_1 full-width">Filtrar</button>
-                            </div>
-                        </form>
-                    </div>
-                </aside>
-
-                <div class="col-lg-9">
+            <div class="header-sec-link">
+                <a href="#sec1" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>
+            </div>
+        </section>
+        <!--  section  end-->
+        <section class="gray-bg small-padding no-top-padding-sec" id="sec1">
+            <div class="container">
+                <div class="breadcrumbs inline-breadcrumbs fl-wrap block-breadcrumbs">
+                    <a href="{{ route('index') }}">Home</a>
+                    <span>Locais</span>
+                </div>
+                <div class="mob-nav-content-btn  color2-bg show-list-wrap-search ntm fl-wrap"><i class="fal fa-filter"></i>  Filtros</div>
+                <div class="fl-wrap">
                     <div class="row">
-                        @if ($companies->count() > 0)
-                            @foreach ($companies as $company)
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="strip">
-                                        <figure>
-                                            <img src="img/lazy-placeholder.png" data-src="{{ $company->image ? env('PAINEL_URL') . '/storage/' . $company->image : '/img/logo.webp' }}" class="img-fluid lazy"
-                                                alt="">
-                                            <a href="/empresa/{{ str()->slug($company->city) }}/{{ $company->slug }}" class="strip_info">
-                                                <small>{{ $company->categories[0]->name }}</small>
-                                                <div class="item_title">
-                                                <h3>{{ $company->name }}</h3>
-                                                <small>{{ "{$company->city}/{$company->state}" }}</small>
+                        <div class="col-md-4">
+                            <div class=" fl-wrap lws_mobile   tabs-act block_box">
+                                <div class="scrl-content filter-sidebar    fs-viscon" style="margin-top: 20px">
+                                    <!--tabs -->
+                                    <div class="tabs-container fl-wrap">
+                                        <!--tab -->
+                                        <div class="tab">
+                                            <form>
+                                                <div id="filters-search" class="tab-content  first-tab ">
+                                                    <!-- listsearch-input-item-->
+                                                    <div class="listsearch-input-item">
+                                                        <span class="iconn-dec"><i class="far fa-bookmark"></i></span>
+                                                        <input type="text" placeholder="O que você está procurando?" value=""/>
+                                                    </div>
+                                                    <!-- listsearch-input-item end-->
+                                                    <!-- listsearch-input-item-->
+                                                    <div class="listsearch-input-item">
+                                                        <select data-placeholder="Categories" name="cat" class="chosen-select no-search-select" >
+                                                            <option>Todas Categorias</option>
+                                                            @foreach ($categories as $category)
+                                                                <option value="{{ $category->id }}" {{ $category->id === request()->cat ? 'selected' : '' }}>
+                                                                    {{ $category->name }} ({{ $category->companies_count }})
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <!-- listsearch-input-item end-->
+                                                    <!-- listsearch-input-item-->
+                                                    <div class="listsearch-input-item location autocomplete-container">
+                                                        <span class="iconn-dec"><i class="far fa-map-marker"></i></span>
+                                                        <input type="text" placeholder="Localização" class="autocomplete-input" id="autocompleteid3" value=""/>
+                                                    </div>
+                                                    <!-- listsearch-input-item end-->
+                                                    <!-- listsearch-input-item-->
+                                                    <div class="listsearch-input-item">
+                                                        <button type="submit" class="header-search-button color-bg"><i class="far fa-search"></i><span>Search</span></button>
+                                                    </div>
+                                                    <!-- listsearch-input-item end-->
+                                                    <a href="{{ route('listing') }}">
+                                                        <div class="clear-filter-btn"><i class="far fa-redo"></i> Resetar Filtros</div>
+                                                    </a>
                                                 </div>
-                                            </a>
-                                        </figure>
+                                            </form>
+                                        </div>
+                                        <!--tab end-->
                                     </div>
+                                    <!--tabs end-->
                                 </div>
-                            @endforeach
-                        @else
-                            <div class="alert alert-warning" role="alert">
-                                Nenhuma empresa foi encontrada nesta pesquisa.
                             </div>
-                        @endif
-                    </div>
-                    <!-- /row -->
-                    @if ($companies->lastPage() > 1)
-                        <div class="pagination_fg">
-                            @if ($companies->currentPage() > 1)
-                                <a href="{{ $companies->previousPageUrl() }}">&laquo;</a>
-                            @endif
-
-                            @for ($i = 1; $i <= $companies->lastPage(); $i++)
-                                <a href="{{ $companies->url($i) }}" class="{{ $companies->currentPage() == $i ? 'active' : '' }}">{{ $i }}</a>
-                            @endfor
-
-                            @if ($companies->currentPage() < $companies->lastPage())
-                                <a href="{{ $companies->nextPageUrl() }}">&raquo;</a>
-                            @endif
                         </div>
-                    @endif
+                        <div class="col-md-8">
+                            <!-- listing-item-container -->
+                            <div class="listing-item-container init-grid-items fl-wrap nocolumn-lic">
+                                @if ($companies->count() > 0)
+                                    @foreach ($companies as $company)
+                                        <!-- listing-item  -->
+                                        <div class="listing-item">
+                                            <article class="geodir-category-listing fl-wrap">
+                                                <div class="geodir-category-img">
+                                                    <a href="listing-single.html" class="geodir-category-img-wrap fl-wrap">
+                                                    <img src="{{ $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/logo.webp' }}" alt="">
+                                                    </a>
+                                                    <div class="geodir-category-opt">
+                                                        <div class="listing-rating-count-wrap">
+                                                            <div class="review-score">{{ number_format($company->rating, 1) }}</div>
+                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ number_format($company->rating / 2, 1) }}"></div>
+                                                            <br>
+                                                            <div class="reviews-count">{{ $company->reviews()->count() }} Avaliações</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="geodir-category-content fl-wrap title-sin_item">
+                                                    <div class="geodir-category-content-title fl-wrap">
+                                                        <div class="geodir-category-content-title-item">
+                                                            <h3 class="title-sin_map">
+                                                                <a href="{{ route('listing.view', ['city' => $company->city, 'company' => $company->slug]) }}">
+                                                                    {{ $company->name }}
+                                                                </a>
+                                                                <span class="verified-badge"><i class="fal fa-check"></i></span>
+                                                            </h3>
+                                                            <div class="geodir-category-location fl-wrap"><a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}"><i class="fas fa-map-marker-alt"></i> {{ $company->full_address }}</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="geodir-category-text fl-wrap">
+                                                        <p class="small-text">{{ $company->description }}</p>
+                                                    </div>
+                                                    <div class="geodir-category-footer fl-wrap">
+                                                        <a class="listing-item-category-wrap" href="#">
+                                                            <div class="listing-item-category" style="width:0"></div>
+                                                            <span>{{ $company->categories[0]->name }}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <!-- listing-item end -->
+                                    @endforeach
+                                @else
+                                    <div class="alert alert-warning" role="alert">
+                                        Nenhuma empresa foi encontrada nesta pesquisa.
+                                    </div>
+                                @endif
+                                <div class="pagination fwmpag">
+                                    @if ($companies->currentPage() > 1)
+                                        <a href="{{ $companies->previousPageUrl() }}" class="prevposts-link"><i class="fas fa-caret-left"></i><span>Prev</span></a>
+                                    @endif
+
+                                    @for ($i = $companies->currentPage() >= 3 ? $companies->currentPage() - 2 : $companies->currentPage(); $i <= ($companies->lastPage() <= $companies->currentPage() + 2 ? $companies->lastPage() : $companies->currentPage() + 2); $i++)
+                                        <a href="{{ $companies->url($i) }}" class="{{ $companies->currentPage() == $i ? 'current-page' : '' }}">{{ $i }}</a>
+                                    @endfor
+
+                                    @if ($companies->currentPage() < $companies->lastPage())
+                                        <a href="{{ $companies->nextPageUrl() }}" class="nextposts-link"><span>Next</span><i class="fas fa-caret-right"></i></a>
+                                    @endif
+                                </div>
+                            </div>
+                            <!-- listing-item-container end -->
+                        </div>
+                    </div>
                 </div>
-                <!-- /col -->
             </div>
-        </div>
-        <!-- /container -->
-    </main>
+        </section>
+        <div class="limit-box fl-wrap"></div>
+    </div>
+    <!--content end-->
 @endsection
-
-@push('scripts')
-    <!-- SPECIFIC CSS -->
-    <link href="css/listing.css" rel="stylesheet">
-
-    <!-- SPECIFIC SCRIPTS -->
-    <script src="js/sticky_sidebar.min.js"></script>
-    <script src="js/specific_listing.js"></script>
-@endpush
