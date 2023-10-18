@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Contact;
+use App\Models\Post;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -14,19 +15,12 @@ class PagesController extends Controller
 {
     public function __construct()
     {
-        $footerCities = Company::approved()
-            ->distinct()
-            ->take(5)
-            ->inRandomOrder()
-            ->pluck('city')
-            ->toArray();
-
-        $footerCompanies = Company::approved()
-            ->take(5)
+        $footerPosts = Post::take(3)
             ->inRandomOrder()
             ->get();
 
-        view()->share(compact('footerCities', 'footerCompanies'));
+
+        view()->share(compact('footerPosts'));
     }
 
     public function index()
@@ -69,9 +63,13 @@ class PagesController extends Controller
                     $query->whereIn('category_id', (array) request()->cat);
                 });
             })
+            ->when($request->filled('search'), function ($query) {
+                $query->where(function ($query) {
+                    $query->orWhere('name', 'like', '%' . request()->search . '%');
+                });
+            })
             ->when($request->filled('city'), function ($query) {
                 $query->where(function ($query) {
-                    $query->orWhere('name', 'like', '%' . request()->city . '%');
                     $query->orWhere('address', 'like', '%' . request()->city . '%');
                     $query->orWhere('neighborhood', 'like', '%' . request()->city . '%');
                     $query->orWhere('city', 'like', '%' . request()->city . '%');
@@ -154,5 +152,20 @@ class PagesController extends Controller
 
         Alert::toast('Contato enviado com sucesso, em breve o responsável entrará em contato.', 'success');
         return back();
+    }
+
+    public function blog()
+    {
+        $posts = Post::where('active', true)
+            ->latest()
+            ->paginate(4);
+
+        return view('blog', compact('posts'));
+    }
+
+    public function viewPost(Request $request, Post $post)
+    {
+        $post->increment('visits');
+        return view('view-post', compact('post'));
     }
 }

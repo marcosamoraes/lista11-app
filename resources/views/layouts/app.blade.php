@@ -24,7 +24,7 @@
     @hasSection('keywords')
         <meta name="keywords" content="@yield('keywords')">
     @else
-        <meta name="keywords" content="hotel, achei 16, restaurante, academia, veículos, bar, som automotivo, restaurante em ribeirão preto, cinema, o que fazer, lojas">
+        <meta name="keywords" content="hotel, lista 11, restaurante, academia, veículos, bar, som automotivo, restaurante em ribeirão preto, cinema, o que fazer, lojas">
     @endif
 
     @hasSection('image')

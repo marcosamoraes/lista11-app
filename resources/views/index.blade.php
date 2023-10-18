@@ -33,22 +33,21 @@
                                         <form action="{{ route('listing') }}">
                                             <div class="main-search-input-item">
                                                 <label><i class="fal fa-keyboard"></i></label>
-                                                <input type="text" placeholder="O que você está procurando?" value=""/>
+                                                <input type="text" name="search" placeholder="O que você está procurando?" value=""/>
                                             </div>
                                             <div class="main-search-input-item location autocomplete-container">
                                                 <label><i class="fal fa-map-marker-check"></i></label>
-                                                <input type="text" placeholder="Localização" class="autocomplete-input" id="autocompleteid" value=""/>
-                                                <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                                <input type="text" name="city" placeholder="Localização" class="autocomplete-input" id="autocompleteid" value=""/>
                                             </div>
                                             <div class="main-search-input-item">
-                                                <select data-placeholder="Categorias"  class="chosen-select" >
-                                                    <option>Categorias</option>
+                                                <select data-placeholder="Categorias" name="cat" class="chosen-select" >
+                                                    <option value="">Categorias</option>
                                                     @foreach($categories as $category)
-                                                        <option>{{ $category->name }}</option>
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <button class="main-search-button color2-bg">Buscar <i class="far fa-search"></i></button>
+                                            <button class="main-search-button color2-bg">Buscar <i class="fa fa-search"></i></button>
                                         </form>
                                     </div>
                                 </div>
@@ -244,7 +243,7 @@
                     <h4>Conheça o programa Trusted do Google.</h4>
                     <h2>Google Street View</h2>
                 </div>
-                <a href="https://vimeo.com/70851162" class="promo-link big_prom   image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
+                <a href="https://www.lista11.com.br/imagens/video-lista11.mp4" class="promo-link big_prom   image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
             </div>
         </section>
         <!--section end-->
@@ -338,97 +337,72 @@
         <!--section end-->
         <!--section  -->
         <section>
-            <div class="container">
-                <div class="section-title">
-                    <h2> Testimonilas</h2>
-                    <div class="section-subtitle">Clients Reviews</div>
-                    <span class="section-separator"></span>
-                    <p>Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla.</p>
-                </div>
+            <div class="section-title">
+                <h2>AGÊNCIA STORM WEB</h2>
+                <div class="section-subtitle">AGÊNCIA STORM WEB</div>
             </div>
-            <div class="clearfix"></div>
-            <div class="testimonilas-carousel-wrap fl-wrap">
-                <div class="listing-carousel-button listing-carousel-button-next"><i class="fas fa-caret-right"></i></div>
-                <div class="listing-carousel-button listing-carousel-button-prev"><i class="fas fa-caret-left"></i></div>
-                <div class="testimonilas-carousel">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src="images/avatar/1.jpg" alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <a href="#" class="testi-link" target="_blank">Via Facebook</a>
-                                        <div class="testimonilas-avatar fl-wrap">
-                                            <h3>Andy Dimasky</h3>
-                                            <h4>Restaurant Owner</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src="images/avatar/1.jpg" alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <a href="#" class="testi-link" target="_blank">Via Twitter</a>
-                                        <div class="testimonilas-avatar fl-wrap">
-                                            <h3>Frank Dellov</h3>
-                                            <h4>Hotel Owner</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src="images/avatar/1.jpg" alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <a href="#" class="testi-link" target="_blank">Via Facebook</a>
-                                        <div class="testimonilas-avatar fl-wrap">
-                                            <h3>Centa Simpson</h3>
-                                            <h4>Restaurant Owner</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                            <!--testi-item-->
-                            <div class="swiper-slide">
-                                <div class="testi-item fl-wrap">
-                                    <div class="testi-avatar"><img src="images/avatar/1.jpg" alt=""></div>
-                                    <div class="testimonilas-text fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                                        <a href="#" class="testi-link" target="_blank">Via Instagram</a>
-                                        <div class="testimonilas-avatar fl-wrap">
-                                            <h3>Linda Svensky</h3>
-                                            <h4>Shop Owner</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--testi-item end-->
-                        </div>
+            <div style="max-width: 800px;margin:auto;position:relative">
+                <img src="images/video_home.webp" alt="" style="width: 100%">
+                <img src="images/flutuantes_video_home.webp" alt="" style="position: absolute; left: -150px; right: 0;">
+            </div>
+            <div style="margin-top: 50px">
+                <a href="https://stormweb.com.br" target="_blank" class="btn  dec_btn  color2-bg">Ir para o site<i class="fal fa-arrow-alt-right"></i></a>
+            </div>
+            <div class="container" style="margin-top: 80px">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="images/marketing-digital.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                    </div>
+                    <div class="col-md-6" style="text-align: left">
+                        <h2 style="font-size: 38px">Marketing Digital</h2>
+                        <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
+                            O Poder do Marketing Digital pode transformar seu negócio! Nós da agência lista11 vamos te ajudar a construir estratégias eficazes que vão atrair novos clientes como também a forma de fazer com que o seu produto e serviço alcance mais pessoas.
+                        </p>
+                        <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
                 </div>
-                <div class="tc-pagination"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="/images/traco1.webp" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" style="text-align: left">
+                        <h2 style="font-size: 38px">Experiência 360º Street View</h2>
+                        <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
+                            O Street View do Google Maps é uma representação virtual do ambiente que nos cerca composta de milhões de imagens panorâmicas, disponível no Google Maps. O conteúdo do Street View tem duas origens: o Google e colaboradores.
+                        </p>
+                        <a href="https://www.lista11.com.br/empresa-confianca-google-programa-trusted" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="images/experiencia_360_street_view.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="/images/traco2.webp" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="images/criacao_de_sites.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                    </div>
+                    <div class="col-md-6" style="text-align: left">
+                        <h2 style="font-size: 38px">Criação de Sites</h2>
+                        <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
+                            Quer atrair novos clientes com um site fantástico e personalizado e por um preço que cabe no seu bolso? A Agência Lista11 vai te ajudar!
+                        </p>
+                        <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
+                    </div>
+                </div>
             </div>
             <div class="waveWrapper waveAnimation">
-              <div class="waveWrapperInner bgMiddle">
-                <div class="wave-bg-anim waveMiddle" style="background-image: url('images/wave-top.png')"></div>
-              </div>
-              <div class="waveWrapperInner bgBottom">
-                <div class="wave-bg-anim waveBottom" style="background-image: url('images/wave-top.png')"></div>
-              </div>
+                <div class="waveWrapperInner bgMiddle">
+                    <div class="wave-bg-anim waveMiddle" style="background-image: url('images/wave-top.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                    <div class="wave-bg-anim waveBottom" style="background-image: url('images/wave-top.png')"></div>
+                </div>
             </div>
         </section>
         <!--section end-->
@@ -443,32 +417,26 @@
                             <div class="swiper-wrapper">
                                 <!--client-item-->
                                 <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
+                                    <a target="_blank" href="https://lista11.com.br/anunciar" class="client-item" style="background-color: #4285f4; border-radius: 20px; width: 150px; height: 150px;padding:15px">
+                                        <img src="images/ico_encontre1.webp" alt="" style="width: auto; height: 80px">
+                                        <p style="color: white; font-size:20px; margin-top:15px">Lista11</p>
+                                    </a>
                                 </div>
                                 <!--client-item end-->
                                 <!--client-item-->
                                 <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
+                                    <a target="_blank" href="https://lista360.com.br" class="client-item" style="background-color: #0f9d58; border-radius: 20px; width: 150px; height: 150px;padding:15px">
+                                        <img src="images/ico_encontre2.webp" alt="" style="width: auto; height: 80px">
+                                        <p style="color: white; font-size:20px; margin-top:15px">Lista360</p>
+                                    </a>
                                 </div>
                                 <!--client-item end-->
                                 <!--client-item-->
                                 <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                </div>
-                                <!--client-item end-->
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                </div>
-                                <!--client-item end-->
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                </div>
-                                <!--client-item end-->
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
+                                    <a target="_blank" href="https://imovel11.com.br" class="client-item" style="background-color: #f4b400; border-radius: 20px; width: 150px; height: 150px;padding:15px">
+                                        <img src="images/ico_encontre3.webp" alt="" style="width: auto; height: 80px">
+                                        <p style="color: white; font-size:20px; margin-top:15px">Imóvel11</p>
+                                    </a>
                                 </div>
                                 <!--client-item end-->
                             </div>

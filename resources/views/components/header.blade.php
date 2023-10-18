@@ -27,10 +27,10 @@
                     <a href="{{ route('listing') }}" class="act-link">Locais</a>
                 </li>
                 <li>
-                    <a href="#" class="act-link">Tour360º</a>
+                    <a href="/tour360" class="act-link">Tour360º</a>
                 </li>
                 <li>
-                    <a href="#" class="act-link">Blog</a>
+                    <a href="/blog" class="act-link">Blog</a>
                 </li>
                 <li>
                     <a href="{{ route('contact') }}" class="act-link">Contato</a>

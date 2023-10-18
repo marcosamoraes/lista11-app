@@ -41,7 +41,7 @@
                                                     <!-- listsearch-input-item-->
                                                     <div class="listsearch-input-item">
                                                         <span class="iconn-dec"><i class="far fa-bookmark"></i></span>
-                                                        <input type="text" placeholder="O que você está procurando?" value=""/>
+                                                        <input type="text" name="search" value="{{ request()->search }}" placeholder="O que você está procurando?" value=""/>
                                                     </div>
                                                     <!-- listsearch-input-item end-->
                                                     <!-- listsearch-input-item-->
@@ -49,7 +49,7 @@
                                                         <select data-placeholder="Categories" name="cat" class="chosen-select no-search-select" >
                                                             <option>Todas Categorias</option>
                                                             @foreach ($categories as $category)
-                                                                <option value="{{ $category->id }}" {{ $category->id === request()->cat ? 'selected' : '' }}>
+                                                                <option value="{{ $category->id }}" {{ $category->id == request()->cat ? 'selected' : '' }}>
                                                                     {{ $category->name }} ({{ $category->companies_count }})
                                                                 </option>
                                                             @endforeach
@@ -58,17 +58,17 @@
                                                     <!-- listsearch-input-item end-->
                                                     <!-- listsearch-input-item-->
                                                     <div class="listsearch-input-item location autocomplete-container">
-                                                        <span class="iconn-dec"><i class="far fa-map-marker"></i></span>
-                                                        <input type="text" placeholder="Localização" class="autocomplete-input" id="autocompleteid3" value=""/>
+                                                        <span class="iconn-dec"><i class="fa fa-map-marker"></i></span>
+                                                        <input type="text" placeholder="Localização" name="city" value="{{ request()->city }}" class="autocomplete-input" id="autocompleteid3" value=""/>
                                                     </div>
                                                     <!-- listsearch-input-item end-->
                                                     <!-- listsearch-input-item-->
                                                     <div class="listsearch-input-item">
-                                                        <button type="submit" class="header-search-button color-bg"><i class="far fa-search"></i><span>Search</span></button>
+                                                        <button type="submit" class="header-search-button color-bg"><i class="fa fa-search"></i><span>Buscar</span></button>
                                                     </div>
                                                     <!-- listsearch-input-item end-->
                                                     <a href="{{ route('listing') }}">
-                                                        <div class="clear-filter-btn"><i class="far fa-redo"></i> Resetar Filtros</div>
+                                                        <div class="clear-filter-btn"><i class="fa fa-redo"></i> Resetar Filtros</div>
                                                     </a>
                                                 </div>
                                             </form>

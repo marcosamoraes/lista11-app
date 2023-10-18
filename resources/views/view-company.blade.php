@@ -185,7 +185,12 @@
                                                 <div class="reviews-comments-item" style="padding: 0">
                                                     <div class="reviews-comments-item-text fl-wrap">
                                                         <div class="reviews-comments-header fl-wrap">
-                                                            <h4><a href="#">{{ $review->name }}</a></h4>
+                                                            <h4>
+                                                                <a href="#">
+                                                                    {{ $review->title }}
+                                                                </a>
+                                                            </h4>
+                                                            <small style="float: left; margin-top: 5px">{{ $review->name }}</small>
                                                             <div class="review-score-user">
                                                                 <span class="review-score-user_item" style="margin-left: 40px">{{ number_format($review->rating, 1) }}</span>
                                                                 <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ number_format($review->rating / 2, 1) }}"></div>
@@ -219,7 +224,8 @@
                                 <!-- Add Review Box -->
                                 <div id="add-review" class="add-review-box">
                                     <!-- Review Comment -->
-                                    <form id="add-comment" class="add-comment  custom-form" name="rangeCalc" >
+                                    <form id="add-comment" class="add-comment custom-form" name="rangeCalc" method="post" action={{ route('company.review.store', ['company' => $company->slug]) }}>
+                                        @csrf
                                         <fieldset>
                                             <div class="review-score-form fl-wrap">
                                                 <div class="review-range-container">
@@ -227,27 +233,27 @@
                                                     <div class="review-range-item">
                                                         <div class="range-slider-title">Dê uma nota de 0 a 10</div>
                                                         <div class="range-slider-wrap ">
-                                                            <input type="text" class="rate-range" data-min="0" data-max="10"  name="rgcl"  data-step="1" value="5">
+                                                            <input type="text" class="rate-range" name="rating" data-min="0" data-max="10"  name="rgcl"  data-step="1" value="5">
                                                         </div>
                                                     </div>
                                                     <!-- review-range-item end -->
-                                                </div>
-                                                <div class="review-total">
-                                                    <span><input type="text" name="rg_total"   data-form="AVG({rgcl})" value="0"></span>
-                                                    <strong>Sua nota</strong>
                                                 </div>
                                             </div>
                                             <div class="list-single-main-item_content fl-wrap">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label><i class="fal fa-user"></i></label>
-                                                        <input type="text" placeholder="Nome *" value=""/>
+                                                        <input type="text" placeholder="Nome *" name="name" value="" required />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label><i class="fa fa-message"></i></label>
+                                                        <input type="text" placeholder="Título *" name="title" value="" required />
                                                     </div>
                                                 </div>
-                                                <textarea cols="40" rows="3" placeholder="Avaliação:"></textarea>
+                                                <textarea cols="40" rows="3" name="message" placeholder="Avaliação:"></textarea>
                                                 <div class="clearfix"></div>
                                                 <div class="clearfix"></div>
-                                                <button class="btn  color2-bg  float-btn">Enviar Avaliação <i class="fal fa-paper-plane"></i></button>
+                                                <button type="submit" class="btn color2-bg float-btn">Enviar Avaliação <i class="fal fa-paper-plane"></i></button>
                                             </div>
                                         </fieldset>
                                     </form>
@@ -328,18 +334,19 @@
                             </div>
                             <div class="box-widget">
                                 <div class="box-widget-content">
-                                    <form class="add-comment custom-form">
+                                    <form class="custom-form" method="post" action="{{ route('company.contact', ['company' => $company->slug]) }}">
+                                        @csrf
                                         <fieldset>
                                             <label><i class="fal fa-user"></i></label>
-                                            <input type="text" placeholder="Nome *" value=""/>
+                                            <input type="text" name="name" placeholder="Nome *" value="" required />
                                             <div class="clearfix"></div>
                                             <label><i class="fal fa-envelope"></i>  </label>
-                                            <input type="text" placeholder="E-mail *" value=""/>
+                                            <input type="email" name="email" placeholder="E-mail *" value="" required />
                                             <label><i class="fab fa-whatsapp"></i>  </label>
-                                            <input type="text" placeholder="Whatsapp *" value=""/>
-                                            <textarea cols="40" rows="3" placeholder="Mensagem"></textarea>
+                                            <input type="text" name="whatsapp" placeholder="Whatsapp *" value="" required />
+                                            <textarea cols="40" rows="3" name="message" placeholder="Mensagem"></textarea>
                                         </fieldset>
-                                        <button type="submit" class="btn color2-bg url_btn float-btn">Enviar <i class="fa fa-paper-plane"></i></button>
+                                        <button type="submit" class="btn color2-bg  float-btn">Enviar <i class="fa fa-paper-plane"></i></button>
                                     </form>
                                 </div>
                             </div>

@@ -23,6 +23,8 @@ Route::get('/empresa/{city}/{company:slug}', [PagesController::class, 'viewCompa
 Route::post('/empresa/{company:slug}/avaliacao', [PagesController::class, 'storeReviewCompany'])->name('company.review.store');
 Route::post('/empresa/{company:slug}/contato', [PagesController::class, 'contactCompany'])->name('company.contact');
 Route::get('/cadastro', [PagesController::class, 'register'])->name('register');
+Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
+Route::get('/blog/{post:slug}', [PagesController::class, 'viewPost'])->name('blog.view');
 Route::get('/contato', [PagesController::class, 'contact'])->name('contact');
 Route::post('/contato', [PagesController::class, 'storeContact'])->name('contact.store');
 

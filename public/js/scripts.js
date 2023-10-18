@@ -728,7 +728,7 @@ function initTowhub() {
 	$(".close-lpt").on("click", function () {
         $(".lost-password-tootip").removeClass("lpt_vis");
     });
- 
+
 	//   Uplaod ------------------
 	$('.fuzone input').each(function () {
 		$(this).on('change', function () {
@@ -1102,7 +1102,6 @@ function initTowhub() {
         weekday[4] = "thu";
         weekday[5] = "fri";
         weekday[6] = "sat";
-        document.getElementsByClassName(weekday[d.getDay()])[0].classList.add("todaysDay");
     }
 // qty -----------------
     $('.quantity-item').each(function () {
@@ -1307,7 +1306,7 @@ $(".romms-select_header").on("click", function () {
 });
  document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
-}); 
+});
 //   Init All ------------------
 $(document).ready(function () {
     initTowhub();

@@ -25,35 +25,25 @@
                 <!-- footer-widget end-->
                 <!-- footer-widget-->
                 <div class="col-md-4">
-                    <div class="footer-widget fl-wrap">
-                        <h3>Blog</h3>
-                        <div class="footer-widget-posts fl-wrap">
-                            <ul class="no-list-style">
-                                <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ asset('images/all/1.jpg') }}" class="respimg" alt=""></a>
-                                    <div class="widget-posts-descr">
-                                        <a href="#" title="">Vivamus dapibus rutrum</a>
-                                        <span class="widget-posts-date"><i class="fal fa-calendar"></i> 21 Mar 09.05 </span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ asset('images/all/1.jpg') }}" class="respimg" alt=""></a>
-                                    <div class="widget-posts-descr">
-                                        <a href="#" title=""> In hac habitasse platea</a>
-                                        <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar 18.21 </span>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <a href="#"  class="widget-posts-img"><img src="{{ asset('images/all/1.jpg') }}" class="respimg" alt=""></a>
-                                    <div class="widget-posts-descr">
-                                        <a href="#" title="">Tortor tempor in porta</a>
-                                        <span class="widget-posts-date"><i class="fal fa-calendar"></i> 7 Mar 16.42 </span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="#" class="footer-link">Read all <i class="fal fa-long-arrow-right"></i></a>
+                    @if ($footerPosts)
+                        <div class="footer-widget fl-wrap">
+                            <h3>Blog</h3>
+                            <div class="footer-widget-posts fl-wrap">
+                                <ul class="no-list-style">
+                                    @foreach ($footerPosts as $post)
+                                        <li class="clearfix">
+                                            <a href="/blog" class="widget-posts-img"><img src="{{ env('ADMIN_URL') . '/storage/' . $post->image }}" class="respimg" alt=""></a>
+                                            <div class="widget-posts-descr">
+                                                <a href="/blog" title="">{{ $post->title }}</a>
+                                                <span class="widget-posts-date"><i class="fal fa-calendar"></i> {{ $post->created_at->format('d/m/Y H:i'); }} </span>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <a href="/blog" class="footer-link">Ver todos <i class="fal fa-long-arrow-right"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <!-- footer-widget end-->
                 <!-- footer-widget  -->
@@ -87,10 +77,10 @@
     <div class="sub-footer  fl-wrap">
         <div class="container">
             <div class="copyright"> &#169; Grupo Lista 11 - Todos os direitos reservados.</div>
-            <a href="#" class="add-list color-bg" style="top: 0; left: 20px">Apareça no Google</a>
+            <a href="{{ route('register') }}" class="add-list color-bg" style="top: 0; left: 20px">Apareça no Google</a>
             <div class="subfooter-nav">
                 <ul class="no-list-style">
-                    <li><a href="#">Quer sua empresa aqui? Anuncie já!</a></li>
+                    <li><a href="{{ route('register') }}">Quer sua empresa aqui? Anuncie já!</a></li>
                 </ul>
             </div>
         </div>
