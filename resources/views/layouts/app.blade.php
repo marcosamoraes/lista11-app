@@ -30,21 +30,21 @@
     @hasSection('image')
         <meta property="og:image" content="@yield('image')">
     @else
-        <meta property="og:image" content="/img/logo.webp">
+        <meta property="og:image" content="logo.webp">
     @endif
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="favicon.ico">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="favicon.ico">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{ asset('favicon.ico') }}">
 
     <!--=============== css  ===============-->
-    <link type="text/css" rel="stylesheet" href="css/reset.css">
-    <link type="text/css" rel="stylesheet" href="css/plugins.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/color.css">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/color.css') }}">
 </head>
 
 <body>
@@ -73,11 +73,10 @@
     <!-- Main end -->
 
     <!--=============== scripts  ===============-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places&callback=initAutocomplete"></script>
-    <script src="js/map-single.js"></script>
+    <script src="https://kit.fontawesome.com/411831a5a4.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 
     @stack('scripts')
 </body>

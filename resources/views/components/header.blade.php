@@ -1,7 +1,7 @@
 <!-- header -->
 <header class="main-header">
     <!-- logo-->
-    <a href="index.html" class="logo-holder"><img src="/logo.webp" alt=""></a>
+    <a href="{{ route('index') }}" class="logo-holder"><img src="/logo.webp" alt=""></a>
     <!-- logo end-->
     <!-- header opt -->
     <a href="{{ route('register') }}" class="add-list color-bg">Apareça no Google</a>

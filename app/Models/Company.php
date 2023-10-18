@@ -40,10 +40,9 @@ class Company extends Model
         'instagram',
         'youtube',
         'google_my_business',
-        'ifood',
-        'waze',
-        'olx',
-        'google_street_view',
+        'video_link',
+        'photo_360_link',
+        'photo_360_code',
         'payment_methods',
         'image',
         'images',
@@ -73,7 +72,7 @@ class Company extends Model
         'images_url',
         'full_address',
         'is_approved',
-        'rating',
+        'rating'
     ];
 
     public static function boot()
@@ -145,6 +144,14 @@ class Company extends Model
     }
 
     /**
+     * Get the last order approved.
+     */
+    public function lastOrderApproved()
+    {
+        return $this->hasOne(Order::class)->where('status', 'approved')->latest();
+    }
+
+    /**
      * Query build to return only companies with status = true and with an order not expired with status = approved.
      */
     public function scopeApproved($query)
@@ -178,5 +185,21 @@ class Company extends Model
     public function rating(): Attribute
     {
         return Attribute::get(fn () => $this->reviews()->avg('rating'));
+    }
+
+    /**
+     * Get the apps for the company.
+     */
+    public function apps()
+    {
+        return $this->belongsToMany(App::class, 'company_apps');
+    }
+
+    /**
+     * Get the company apps for the company.
+     */
+    public function companyApps()
+    {
+        return $this->hasMany(CompanyApp::class);
     }
 }

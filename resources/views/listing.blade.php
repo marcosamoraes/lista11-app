@@ -88,7 +88,7 @@
                                         <div class="listing-item">
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
-                                                    <a href="listing-single.html" class="geodir-category-img-wrap fl-wrap">
+                                                    <a href="{{ route('listing.view', ['city' => $company->city, 'company' => $company->slug]) }}" class="geodir-category-img-wrap fl-wrap">
                                                     <img src="{{ $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/logo.webp' }}" alt="">
                                                     </a>
                                                     <div class="geodir-category-opt">
