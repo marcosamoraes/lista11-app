@@ -51,10 +51,10 @@
                     <div class="footer-widget fl-wrap ">
                         <h3>Links</h3>
                             <ul class="footer-list fl-wrap">
-                                <li><a href="#">Sobre nós</a></li>
-                                <li><a href="#">Tour360</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contato</a></li>
+                                <li><a href="/sobre">Sobre nós</a></li>
+                                <li><a href="/tour360">Tour360</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/contato">Contato</a></li>
                             </ul>
                             <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-apple"></i>  Apple Store </a>
                             <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-android"></i>  Google Play </a>

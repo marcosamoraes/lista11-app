@@ -243,7 +243,7 @@
                     <h4>Conheça o programa Trusted do Google.</h4>
                     <h2>Google Street View</h2>
                 </div>
-                <a href="https://www.lista11.com.br/imagens/video-lista11.mp4" class="promo-link big_prom   image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
+                <a href="images/video-lista11.mp4" class="promo-link big_prom image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
             </div>
         </section>
         <!--section end-->

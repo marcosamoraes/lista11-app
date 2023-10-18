@@ -168,4 +168,14 @@ class PagesController extends Controller
         $post->increment('visits');
         return view('view-post', compact('post'));
     }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function tour360()
+    {
+        return view('tour360');
+    }
 }

@@ -1312,3 +1312,4 @@ $(document).ready(function () {
     initTowhub();
     initparallax();
 });
+
