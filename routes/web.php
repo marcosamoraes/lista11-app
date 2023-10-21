@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SitemapController;
 use App\Models\User;
 use App\Notifications\ClientCreated;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::get('/blog', [PagesController::class, 'blog'])->name('blog');
 Route::get('/blog/{post:slug}', [PagesController::class, 'viewPost'])->name('blog.view');
 Route::get('/contato', [PagesController::class, 'contact'])->name('contact');
 Route::post('/contato', [PagesController::class, 'storeContact'])->name('contact.store');
+
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/mailable', function () {
     return (new ClientCreated('123456'))->toMail(User::first());
