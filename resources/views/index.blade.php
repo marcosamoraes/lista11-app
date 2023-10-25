@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '...')
+@section('title', 'Destacando sua empresa na internet')
 
 @section('content')
     <!-- content-->
@@ -95,7 +95,7 @@
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
                                                     <a href="{{ route('listing.view', ['city' => $featuredCompany->city, 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                                        <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $featuredCompany->image }}); height: 350px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
+                                                        <div style="background-image: url({{ $featuredCompany->image ? env('ADMIN_URL') . '/storage/' . $featuredCompany->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                                     </a>
                                                     <div class="geodir-category-opt">
                                                         <div class="geodir-category-opt_title" style="max-width: 50%">
@@ -203,7 +203,7 @@
                                 <article class="geodir-category-listing fl-wrap">
                                     <div class="geodir-category-img">
                                         <a href="{{ route('listing.view', ['city' => $newCompany->city, 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                            <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $newCompany->image }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
+                                            <div style="background-image: url({{ $newCompany->image ? env('ADMIN_URL') . '/storage/' . $newCompany->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                         </a>
                                         <div class="geodir-category-opt">
                                             <div class="listing-rating-count-wrap">

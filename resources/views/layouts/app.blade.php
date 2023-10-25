@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="author" content="Lista11">
+    <meta name="author" content="Lista 11 | Destacando sua empresa na internet.">
+    <meta name=robots content="index, follow">
 
     <title>{{ config('app.name', 'Lista 11') }} - @yield('title')</title>
 
@@ -24,7 +25,7 @@
     @hasSection('keywords')
         <meta name="keywords" content="@yield('keywords')">
     @else
-        <meta name="keywords" content="hotel, lista 11, restaurante, academia, veículos, bar, som automotivo, restaurante em ribeirão preto, cinema, o que fazer, lojas">
+        <meta name="keywords" content="guia de empresas são paulo, apareça no google em são paulo, como aparecer no google, tour virtual google, desenvolvimento de site, marketing digital, gestão de redes sociais, divulgar empresa no google.">
     @endif
 
     @hasSection('image')

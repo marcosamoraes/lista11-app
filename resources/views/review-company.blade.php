@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ribeirão Preto - Restaurante, hotel, bares, lojas, oficina, som e muito mais...')
+@section('title', 'Destacando sua empresa na internet.')
 
 @section('content')
     <main class="bg_gray pattern">

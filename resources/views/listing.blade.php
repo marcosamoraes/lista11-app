@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '...')
+@section('title', 'Destacando sua empresa na internet.')
 
 @section('content')
     <!-- content-->
@@ -89,7 +89,7 @@
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
                                                     <a href="{{ route('listing.view', ['city' => $company->city, 'company' => $company->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                                    <img src="{{ $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/logo.webp' }}" alt="">
+                                                        <div style="background-image: url({{ $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                                     </a>
                                                     <div class="geodir-category-opt">
                                                         <div class="listing-rating-count-wrap">
