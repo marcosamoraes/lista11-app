@@ -196,9 +196,9 @@
                     <div class="section-subtitle">ÚLTIMOS LUGARES CADASTRADOS</div>
                 </div>
                 <div class="grid-item-holder gallery-items fl-wrap">
-                    <!--  gallery-item-->
-                    <div class="gallery-item restaurant events">
-                        @foreach($newCompanies as $newCompany)
+                    @foreach($newCompanies as $newCompany)
+                        <!--  gallery-item-->
+                        <div class="gallery-item restaurant events">
                             <!-- listing-item  -->
                             <div class="listing-item">
                                 <article class="geodir-category-listing fl-wrap">
@@ -238,9 +238,9 @@
                                 </article>
                             </div>
                             <!-- listing-item end -->
-                        @endforeach
-                    </div>
-                    <!-- gallery-item  end-->
+                        </div>
+                        <!-- gallery-item  end-->
+                    @endforeach
                 </div>
                 <a href="{{ route('listing') }}" class="btn  dec_btn  color2-bg">Ver todos os locais<i class="fal fa-arrow-alt-right"></i></a>
             </div>
