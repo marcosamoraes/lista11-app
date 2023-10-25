@@ -39,7 +39,9 @@
                                         <div class="clearfix"></div>
                                         <label><i class="fal fa-envelope"></i>  </label>
                                         <input type="email"  name="email" id="email" placeholder="E-mail *" value=""/>
+                                        <label><i class="fab fa-whatsapp"></i>  </label>
                                         <input type="text"  name="whatsapp" id="whatsapp" placeholder="Whatsapp *" value=""/>
+                                        <label><i class="fa fa-map-marker"></i>  </label>
                                         <input type="text"  name="city" id="city" placeholder="Cidade *" value=""/>
                                     </fieldset>
                                     <button class="btn float-btn color2-bg" id="submit">Cadastrar<i class="fal fa-paper-plane"></i></button>
