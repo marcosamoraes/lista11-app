@@ -42,8 +42,6 @@
 
     <!--=============== css  ===============-->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/plugins.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/color.css') }}">
 </head>
 
@@ -113,9 +111,12 @@
 
         @include('components.footer')
 
-        <a class="to-top"><i class="fas fa-caret-up"></i></a>
+        <a href="#" class="to-top"><i class="fas fa-caret-up"></i></a>
     </div>
     <!-- Main end -->
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!--=============== scripts  ===============-->
     <script src="https://kit.fontawesome.com/411831a5a4.js" crossorigin="anonymous"></script>
