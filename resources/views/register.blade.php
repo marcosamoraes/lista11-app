@@ -3,53 +3,56 @@
 @section('title', 'Ribeirão Preto - Restaurante, hotel, bares, lojas, oficina, som e muito mais...')
 
 @section('content')
-	<main class="bg_gray pattern">
-        <div class="container margin_60_40 margin_mobile" style="position: relative; padding-top: 100px">
-            <div class="row justify-content-center">
-                <div class="col-lg-4">
-                    <div class="box_booking_2">
-                        <div class="head">
-                            <div class="title">
-                                <h3>Cadastre sua empresa</h3>
+<!-- content-->
+<div class="content">
+    <!--  section  -->
+    <section class="parallax-section single-par" data-scrollax-parent="true">
+        <div class="bg par-elem "  data-bg="images/bg/banner1.png" data-scrollax="properties: { translateY: '30%' }"></div>
+        <div class="overlay op7"></div>
+        <div class="container">
+            <div class="section-title center-align big-title">
+                <h2><span>Cadastre sua empresa</span></h2>
+                <span class="section-separator"></span>
+                <div class="breadcrumbs fl-wrap"><a href="{{ route('index') }}">Home</a><span>Cadastre sua empresa</span></div>
+            </div>
+        </div>
+        <div class="header-sec-link">
+            <a href="#sec1" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>
+        </div>
+    </section>
+    <!--  section  end-->
+    <!--  section  -->
+    <section   id="sec1" data-scrollax-parent="true">
+        <div class="container">
+            <!--about-wrap -->
+            <div class="about-wrap">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="ab_text">
+                            <div id="contact-form">
+                                <div id="message"></div>
+                                <form method="POST" action="{{ route('contact.store') }}" class="custom-form">
+                                    @csrf
+                                    <fieldset>
+                                        <label><i class="fal fa-user"></i></label>
+                                        <input type="text" name="name" id="name" placeholder="Nome Completo *" value=""/>
+                                        <div class="clearfix"></div>
+                                        <label><i class="fal fa-envelope"></i>  </label>
+                                        <input type="email"  name="email" id="email" placeholder="E-mail *" value=""/>
+                                        <input type="text"  name="whatsapp" id="whatsapp" placeholder="Whatsapp *" value=""/>
+                                        <input type="text"  name="city" id="city" placeholder="Cidade *" value=""/>
+                                    </fieldset>
+                                    <button class="btn float-btn color2-bg" id="submit">Cadastrar<i class="fal fa-paper-plane"></i></button>
+                                </form>
                             </div>
-                        </div>
-                        <!-- /head -->
-                        <div class="main">
-                            <form method="POST" action="{{ route('contact.store') }}">
-                                @csrf
-                                <div class="form-group">
-                                    <input class="form-control" name="name" placeholder="Nome Completo">
-                                    <i class="icon_pencil"></i>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="email" name="email" placeholder="E-mail">
-                                    <i class="icon_mail"></i>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" name="whatsapp" placeholder="Whatsapp">
-                                    <i class="icon_phone"></i>
-                                </div>
-                                <div class="form-group add_bottom_15">
-                                    <input class="form-control" name="city" placeholder="Cidade">
-                                    <i class="icon_pin"></i>
-                                </div>
-                                <button type="submit" class="btn_1 full-width mb_5">Cadastrar</button>
-                            </form>
+                            <!-- contact form  end-->
                         </div>
                     </div>
-                    <!-- /box_booking -->
                 </div>
-                <!-- /col -->
-
             </div>
-            <!-- /row -->
+            <!-- about-wrap end  -->
         </div>
-    </main>
+    </section>
+</div>
+<!--content end-->
 @endsection
-
-@push('scripts')
-    <!-- SPECIFIC CSS -->
-    <link href="css/booking-sign_up.css" rel="stylesheet">
-    <script src="/js/jquery.mask.min.js"></script>
-    <script src="/js/custom.js"></script>
-@endpush

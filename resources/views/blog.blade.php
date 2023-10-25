@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="list-single-main-item fl-wrap block_box">
                                             <h2 class="post-opt-title">{{ $post->title }}</h2>
-                                            <p>{{ $post->content }}</p>
+                                            <p>{!! $post->content !!}</p>
                                             <span class="fw-separator"></span>
                                             <div class="post-opt">
                                                 <ul class="no-list-style">

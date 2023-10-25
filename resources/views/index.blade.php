@@ -65,6 +65,19 @@
         <!--section end-->
         <!--section  -->
         <section class="slw-sec" id="sec1">
+
+            @if ($banners)
+                <div class="container" style="display: flex; gap-5; margin-bottom: 70px">
+                    @foreach($banners as $banner)
+                        <div>
+                            <a href="{{ $banner->link }}" target="_blank">
+                                <img src="{{ env('ADMIN_URL') . '/storage/' . $banner->image }}" alt="" style="width: 90%">
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
             <div class="section-title">
                 <h2>LOCAIS EM DESTAQUE</h2>
                 <div class="section-subtitle">LOCAIS EM DESTAQUE</div>
@@ -243,7 +256,7 @@
                     <h4>Conheça o programa Trusted do Google.</h4>
                     <h2>Google Street View</h2>
                 </div>
-                <a href="images/video-lista11.mp4" class="promo-link big_prom image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
+                <a href="https://www.youtube.com/watch?v=nFt3wnWM2S4" class="promo-link big_prom image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
             </div>
         </section>
         <!--section end-->
@@ -283,7 +296,6 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="process-end"><i class="fal fa-check"></i></div>
                 </div>
             </div>
         </section>
@@ -307,8 +319,8 @@
                             <img src="images/api.png" class="main-collage-image" alt="">
                             <div class="images-collage-title color2-bg icdec"> <img src="logo.webp"   alt=""></div>
                             <div class="images-collage_icon green-bg" style="right:-20px; top:120px;"><i class="fal fa-thumbs-up"></i></div>
-                            <div class="collage-image-min cim_1"><img src="images/api/1.jpg" alt=""></div>
-                            <div class="collage-image-min cim_2"><img src="images/api/1.jpg" alt=""></div>
+                            <div class="collage-image-min cim_1"><img src="favicon.png" alt="" style="background: white"></div>
+                            <div class="collage-image-min cim_2"><img src="favicon.png" alt="" style="background: white"></div>
                         </div>
                     </div>
                 </div>
@@ -402,46 +414,6 @@
                 </div>
                 <div class="waveWrapperInner bgBottom">
                     <div class="wave-bg-anim waveBottom" style="background-image: url('images/wave-top.png')"></div>
-                </div>
-            </div>
-        </section>
-        <!--section end-->
-        <!--section  -->
-        <section class="gray-bg">
-            <div class="container">
-                <div class="clients-carousel-wrap fl-wrap">
-                    <div class="cc-btn   cc-prev"><i class="fal fa-angle-left"></i></div>
-                    <div class="cc-btn cc-next"><i class="fal fa-angle-right"></i></div>
-                    <div class="clients-carousel">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a target="_blank" href="https://lista11.com.br/anunciar" class="client-item" style="background-color: #4285f4; border-radius: 20px; width: 150px; height: 150px;padding:15px">
-                                        <img src="images/ico_encontre1.webp" alt="" style="width: auto; height: 80px">
-                                        <p style="color: white; font-size:20px; margin-top:15px">Lista11</p>
-                                    </a>
-                                </div>
-                                <!--client-item end-->
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a target="_blank" href="https://lista360.com.br" class="client-item" style="background-color: #0f9d58; border-radius: 20px; width: 150px; height: 150px;padding:15px">
-                                        <img src="images/ico_encontre2.webp" alt="" style="width: auto; height: 80px">
-                                        <p style="color: white; font-size:20px; margin-top:15px">Lista360</p>
-                                    </a>
-                                </div>
-                                <!--client-item end-->
-                                <!--client-item-->
-                                <div class="swiper-slide">
-                                    <a target="_blank" href="https://imovel11.com.br" class="client-item" style="background-color: #f4b400; border-radius: 20px; width: 150px; height: 150px;padding:15px">
-                                        <img src="images/ico_encontre3.webp" alt="" style="width: auto; height: 80px">
-                                        <p style="color: white; font-size:20px; margin-top:15px">Imóvel11</p>
-                                    </a>
-                                </div>
-                                <!--client-item end-->
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

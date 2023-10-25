@@ -2,7 +2,7 @@
 
 @section('title', "{$company->name} - {$company->city}/{$company->state} - {$company->categories[0]->name}")
 
-@section('image', $company->image ? env('PAINEL_URL') . '/storage/' . $company->image : '/img/logo.webp')
+@section('image', $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/img/logo.webp')
 @section('description', $company->description)
 @section('abstract', $company->tags->pluck('name')->implode(','))
 @section('keywords', $company->tags->pluck('name')->implode(','))
@@ -12,7 +12,7 @@
     <div class="content">
         <section class="listing-hero-section hidden-section" data-scrollax-parent="true" id="sec1">
             <div class="bg-parallax-wrap">
-                <div class="bg par-elem "  data-bg="{{ asset('images/bg/banner1.png') }}" data-scrollax="properties: { translateY: '30%' }"></div>
+                <div class="bg par-elem "  data-bg="{{ $company->banner ? env('ADMIN_URL') . '/storage/' . $company->banner : asset('images/bg/banner1.png') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                 <div class="overlay"></div>
             </div>
             <div class="container">
@@ -21,7 +21,7 @@
                         <div class="col-md-9">
                             <h1>{{ $company->name }} <span class="verified-badge"><i class="fal fa-check"></i></span></h1>
                             <div class="geodir-category-location fl-wrap">
-                                <a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}">
+                                <a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}" style="max-width: 300px">
                                     <i class="fas fa-map-marker-alt"></i>  {{ $company->full_address }}
                                 </a>
                                 <a href="https://wa.me/{{ preg_replace("/[^0-9]/", "", $company->phone) }}">
@@ -54,7 +54,7 @@
                     @endif
                     <div class="list-single-stats">
                         <ul class="no-list-style">
-                            <li><span class="viewed-counter"><i class="fas fa-eye"></i> Visualizações -  {{ $company->visits }} </span></li>
+                            <li><span class="viewed-counter"><i class="fas fa-eye"></i> {{ $company->visits }} Visualizações</span></li>
                         </ul>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                             <!-- list-single-main-item -->
                             <div class="list-single-main-item fl-wrap block_box" id="sec5">
                                 <div class="list-single-main-item-title">
-                                    <h3>Avaliações -  <span> {{ $company->reviews()->count() }} </span></h3>
+                                    <h3><span>{{ $company->reviews()->count() }}</span> Avaliações</h3>
                                 </div>
                                 <!--reviews-score-wrap-->
                                 <div class="reviews-score-wrap fl-wrap" style="height: 130px">
@@ -219,7 +219,7 @@
                             <!-- list-single-main-item -->
                             <div class="list-single-main-item fl-wrap block_box" id="sec6">
                                 <div class="list-single-main-item-title fl-wrap">
-                                    <h3>Adicionar avaliação</h3>
+                                    <h3>Deixe sua avaliação</h3>
                                 </div>
                                 <!-- Add Review Box -->
                                 <div id="add-review" class="add-review-box">
@@ -231,7 +231,7 @@
                                                 <div class="review-range-container">
                                                     <!-- review-range-item-->
                                                     <div class="review-range-item">
-                                                        <div class="range-slider-title">Dê uma nota de 0 a 10</div>
+                                                        <div class="range-slider-title" style="width: 100%" >Dê uma nota de 0 a 10</div>
                                                         <div class="range-slider-wrap ">
                                                             <input type="text" class="rate-range" name="rating" data-min="0" data-max="10"  name="rgcl"  data-step="1" value="5">
                                                         </div>
@@ -275,7 +275,7 @@
                                 <div class="box-widget-author fl-wrap">
                                     <div class="box-widget-author-title">
                                         <div class="box-widget-author-title_content">
-                                            <a href="#">Whatsapp</a>
+                                            <a href="#">Fale conosco!</a>
                                         </div>
                                         <div class="box-widget-author-title_opt">
                                             <a href="https://wa.me/{{ preg_replace("/[^0-9]/", "", $company->phone) }}" class="tolt green-bg" data-microtip-position="top" data-tooltip="{{ $company->phone }}">
@@ -359,7 +359,7 @@
                             </div>
                             <div class="box-widget opening-hours fl-wrap">
                                 <div class="box-widget-content">
-                                    {!! $company->opening_hours !!}
+                                    {!! nl2br(e($company->opening_hours)) !!}
                                 </div>
                             </div>
                         </div>

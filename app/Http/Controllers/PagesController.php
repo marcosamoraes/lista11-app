@@ -9,7 +9,6 @@ use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Review;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class PagesController extends Controller
 {
@@ -87,7 +86,8 @@ class PagesController extends Controller
     public function viewCompany(Request $request, string $city, Company $company)
     {
         if (!$company->status || !$company->is_approved) {
-            Alert::toast('Empresa não encontrada.', 'error');
+            $this->showAlert('Empresa não encontrada.', 'error');
+
             return redirect()->route('index');
         }
 
@@ -110,7 +110,7 @@ class PagesController extends Controller
             'rating'        => $request->rating,
         ]);
 
-        Alert::toast('Avaliação enviada com sucesso.', 'success');
+        $this->showAlert('Avaliação enviada com sucesso.', 'success');
         return redirect(route('listing.view', [$company->city, $company->slug]));
     }
 
@@ -126,7 +126,7 @@ class PagesController extends Controller
             'message'       => $request->message,
         ]);
 
-        Alert::toast('Contato enviado com sucesso, em breve o responsável entrará em contato.', 'success');
+        $this->showAlert('Contato enviado com sucesso, em breve o responsável entrará em contato.', 'success');
         return back();
     }
 
@@ -150,7 +150,7 @@ class PagesController extends Controller
             'message'       => $request->message ?? 'Empresa interessada em anunciar.',
         ]);
 
-        Alert::toast('Contato enviado com sucesso, em breve o responsável entrará em contato.', 'success');
+        $this->showAlert('Contato enviado com sucesso, em breve o responsável entrará em contato.', 'success');
         return back();
     }
 
@@ -177,5 +177,15 @@ class PagesController extends Controller
     public function tour360()
     {
         return view('tour360');
+    }
+
+    private function showAlert(string $message, string $type = 'success')
+    {
+        $alert = [
+            'message' => $message,
+            'type' => $type
+        ];
+
+        session()->flash('alert', $alert);
     }
 }

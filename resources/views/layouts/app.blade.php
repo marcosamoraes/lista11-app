@@ -48,7 +48,52 @@
 </head>
 
 <body>
-    @include('sweetalert::alert')
+    <div id="alert-message"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var alert = document.getElementById('alert-message');
+            var alertData = {!! json_encode(session('alert')) !!};
+
+            if (alertData) {
+                alert.innerHTML = '<div class="alert alert-' + alertData.type + '">' + alertData.message + '</div>';
+                setTimeout(function() {
+                    alert.innerHTML = '';
+                }, 5000);
+            }
+        });
+    </script>
+
+    <style>
+        .alert {
+            padding: 10px;
+            z-index: 99999999;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            position: fixed;
+            right: 15px;
+            top: 15px;
+            width: 350px;
+            height: 50px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
     <!--loader-->
     <div class="loader-wrap">
         <div class="loader-inner">
