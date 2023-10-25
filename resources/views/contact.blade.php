@@ -7,7 +7,7 @@
     <div class="content">
         <!--  section  -->
         <section class="parallax-section single-par" data-scrollax-parent="true">
-            <div class="bg par-elem "  data-bg="images/bg/banner1.png" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="bg par-elem "  data-bg="images/bg/banner1.webp" data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="overlay op7"></div>
             <div class="container">
                 <div class="section-title center-align big-title">

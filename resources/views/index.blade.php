@@ -9,7 +9,7 @@
         <section class="hero-section" data-scrollax-parent="true">
             <div class="bg-tabs-wrap">
                 <div class="bg-parallax-wrap" data-scrollax="properties: { translateY: '200px' }">
-                    <div class="bg bg_tabs"  data-bg="images/bg/banner1.png"></div>
+                    <div class="bg bg_tabs"  data-bg="images/bg/banner1.webp"></div>
                     <div class="overlay op7"></div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
         <div class="sec-circle fl-wrap"></div>
         <!--section end-->
         <section class="parallax-section small-par" data-scrollax-parent="true">
-            <div class="bg par-elem "  data-bg="images/bg/banner2.png" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="bg par-elem "  data-bg="images/bg/banner2.webp" data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="overlay  op7"></div>
             <div class="container">
                 <div class=" single-facts single-facts_2 fl-wrap">
@@ -248,7 +248,7 @@
         <!--section end-->
         <!--section  -->
         <section class="parallax-section" data-scrollax-parent="true">
-            <div class="bg par-elem "  data-bg="images/bg/banner3.png" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="bg par-elem "  data-bg="images/bg/banner3.webp" data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="overlay op7"></div>
             <!--container-->
             <div class="container">
@@ -316,11 +316,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="collage-image">
-                            <img src="images/api.png" class="main-collage-image" alt="">
+                            <img src="images/api.webp" class="main-collage-image" alt="">
                             <div class="images-collage-title color2-bg icdec"> <img src="logo.webp"   alt=""></div>
                             <div class="images-collage_icon green-bg" style="right:-20px; top:120px;"><i class="fal fa-thumbs-up"></i></div>
-                            <div class="collage-image-min cim_1"><img src="favicon.png" alt="" style="background: white"></div>
-                            <div class="collage-image-min cim_2"><img src="favicon.png" alt="" style="background: white"></div>
+                            <div class="collage-image-min cim_1"><img src="favicon.webp" alt="" style="background: white"></div>
+                            <div class="collage-image-min cim_2"><img src="favicon.webp" alt="" style="background: white"></div>
                         </div>
                     </div>
                 </div>

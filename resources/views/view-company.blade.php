@@ -12,7 +12,7 @@
     <div class="content">
         <section class="listing-hero-section hidden-section" data-scrollax-parent="true" id="sec1">
             <div class="bg-parallax-wrap">
-                <div class="bg par-elem "  data-bg="{{ $company->banner ? env('ADMIN_URL') . '/storage/' . $company->banner : asset('images/bg/banner1.png') }}" data-scrollax="properties: { translateY: '30%' }"></div>
+                <div class="bg par-elem "  data-bg="{{ $company->banner ? env('ADMIN_URL') . '/storage/' . $company->banner : asset('images/bg/banner1.webp') }}" data-scrollax="properties: { translateY: '30%' }"></div>
                 <div class="overlay"></div>
             </div>
             <div class="container">
