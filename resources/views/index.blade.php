@@ -95,7 +95,7 @@
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
                                                     <a href="{{ route('listing.view', ['city' => $featuredCompany->city, 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                                        <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $featuredCompany->image }}); background-image: url(http://localhost:8001/storage/companies/652d9d621c43f.webp); height: 350px; background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                                                        <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $featuredCompany->image }}); height: 350px; background-repeat: no-repeat; background-size: cover; background-position: center center;">
                                                         </div>
                                                     </a>
                                                     <div class="geodir-category-opt">
