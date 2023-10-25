@@ -203,7 +203,7 @@
                                 <article class="geodir-category-listing fl-wrap">
                                     <div class="geodir-category-img">
                                         <a href="{{ route('listing.view', ['city' => $newCompany->city, 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                            <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $newCompany->image }}); height: 350px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
+                                            <div style="background-image: url({{ env('ADMIN_URL') . '/storage/' . $newCompany->image }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                         </a>
                                         <div class="geodir-category-opt">
                                             <div class="listing-rating-count-wrap">
