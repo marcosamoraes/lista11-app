@@ -83,7 +83,7 @@ class PagesController extends Controller
         return view('listing', compact('categories', 'companies'));
     }
 
-    public function viewCompany(Request $request, string $city, Company $company)
+    public function viewCompany(Request $request, string $category, string $city, Company $company)
     {
         if (!$company->status || !$company->is_approved) {
             $this->showAlert('Empresa não encontrada.', 'error');

@@ -88,7 +88,7 @@
                                         <div class="listing-item">
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
-                                                    <a href="{{ route('listing.view', ['city' => $company->city, 'company' => $company->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                                    <a href="{{ route('listing.view', ['category' => str()->slug($company->categories[0]->name), 'city' => str()->slug($company->city), 'company' => $company->slug]) }}" class="geodir-category-img-wrap fl-wrap">
                                                         <div style="background-image: url({{ $company->image ? env('ADMIN_URL') . '/storage/' . $company->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                                     </a>
                                                     <div class="geodir-category-opt">
@@ -104,7 +104,7 @@
                                                     <div class="geodir-category-content-title fl-wrap">
                                                         <div class="geodir-category-content-title-item">
                                                             <h3 class="title-sin_map">
-                                                                <a href="{{ route('listing.view', ['city' => $company->city, 'company' => $company->slug]) }}">
+                                                                <a href="{{ route('listing.view', ['category' => str()->slug($company->categories[0]->name), 'city' => str()->slug($company->city), 'company' => $company->slug]) }}">
                                                                     {{ $company->name }}
                                                                 </a>
                                                                 <span class="verified-badge"><i class="fal fa-check"></i></span>

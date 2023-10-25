@@ -94,12 +94,12 @@
                                         <div class="listing-item listing_carditem">
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
-                                                    <a href="{{ route('listing.view', ['city' => $featuredCompany->city, 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                                    <a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
                                                         <div style="background-image: url({{ $featuredCompany->image ? env('ADMIN_URL') . '/storage/' . $featuredCompany->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                                     </a>
                                                     <div class="geodir-category-opt">
                                                         <div class="geodir-category-opt_title" style="max-width: 50%">
-                                                            <h4><a href="{{ route('listing.view', ['city' => $featuredCompany->city, 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
+                                                            <h4><a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
                                                             <div class="geodir-category-location">
                                                                 <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}">
                                                                     <i class="fas fa-map-marker-alt"></i> {{ $featuredCompany->full_address }}
@@ -202,7 +202,7 @@
                             <div class="listing-item">
                                 <article class="geodir-category-listing fl-wrap">
                                     <div class="geodir-category-img">
-                                        <a href="{{ route('listing.view', ['city' => $newCompany->city, 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                        <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
                                             <div style="background-image: url({{ $newCompany->image ? env('ADMIN_URL') . '/storage/' . $newCompany->image : '/logo.webp' }}); height: 200px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                         </a>
                                         <div class="geodir-category-opt">
@@ -218,7 +218,7 @@
                                         <div class="geodir-category-content-title fl-wrap">
                                             <div class="geodir-category-content-title-item">
                                                 <h3 class="title-sin_map">
-                                                    <a href="{{ route('listing.view', ['city' => $newCompany->city, 'company' => $newCompany->slug]) }}">{{ $newCompany->name }}</a>
+                                                    <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}">{{ $newCompany->name }}</a>
                                                     <span class="verified-badge"><i class="fal fa-check"></i></span>
                                                 </h3>
                                                 <div class="geodir-category-location fl-wrap"><a target="_blank" href="https://www.google.com/maps/place/{{ $newCompany->full_address }}"><i class="fas fa-map-marker-alt"></i> {{ $newCompany->full_address }}</a></div>

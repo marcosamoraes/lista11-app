@@ -8,6 +8,27 @@
 @section('keywords', $company->tags->pluck('name')->implode(','))
 
 @section('content')
+    <style>
+        .hidden-desktop {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hidden-desktop {
+                display: block;
+            }
+        }
+
+        .hidden-mobile {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+    </style>
     <!-- content-->
     <div class="content">
         <section class="listing-hero-section hidden-section" data-scrollax-parent="true" id="sec1">
@@ -107,29 +128,6 @@
                                     <p>{{ $company->description }}</p>
                                 </div>
                             </div>
-                            <!-- list-single-main-item end -->
-                            @if ($company->companyApps)
-                                <!-- list-single-main-item -->
-                                <div class="list-single-main-item fl-wrap block_box">
-                                    <div class="list-single-main-item-title">
-                                        <h3>Conexões com aplicativos</h3>
-                                    </div>
-                                    <div class="list-single-main-item_content fl-wrap">
-                                        <div class="listing-features fl-wrap">
-                                            <ul class="no-list-style">
-                                                @foreach($company->companyApps as $companyApp)
-                                                    <li>
-                                                        <a href="{{ $companyApp->url }}" rel="noreferrer">
-                                                            <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- list-single-main-item end -->
-                            @endif
                             @if ($company->images)
                                 <!-- list-single-main-item-->
                                 <div class="list-single-main-item fl-wrap block_box" id="sec3">
@@ -161,9 +159,32 @@
                                 </div>
                                 <!-- list-single-main-item end -->
                             @endif
+                            <!-- list-single-main-item end -->
+                            @if ($company->companyApps)
+                                <!-- list-single-main-item -->
+                                <div class="list-single-main-item fl-wrap block_box">
+                                    <div class="list-single-main-item-title">
+                                        <h3>Conexões com aplicativos</h3>
+                                    </div>
+                                    <div class="list-single-main-item_content fl-wrap">
+                                        <div class="listing-features fl-wrap">
+                                            <ul class="no-list-style">
+                                                @foreach($company->companyApps as $companyApp)
+                                                    <li>
+                                                        <a href="{{ $companyApp->url }}" rel="noreferrer">
+                                                            <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list-single-main-item end -->
+                            @endif
 
                             <!-- list-single-main-item -->
-                            <div class="list-single-main-item fl-wrap block_box" id="sec5">
+                            <div class="list-single-main-item fl-wrap block_box hidden-mobile" id="sec5">
                                 <div class="list-single-main-item-title">
                                     <h3><span>{{ $company->reviews()->count() }}</span> Avaliações</h3>
                                 </div>
@@ -217,7 +238,7 @@
                             </div>
                             <!-- list-single-main-item end -->
                             <!-- list-single-main-item -->
-                            <div class="list-single-main-item fl-wrap block_box" id="sec6">
+                            <div class="list-single-main-item fl-wrap block_box hidden-mobile" id="sec6">
                                 <div class="list-single-main-item-title fl-wrap">
                                     <h3>Deixe sua avaliação</h3>
                                 </div>
@@ -278,7 +299,7 @@
                                             <a href="#">Fale conosco!</a>
                                         </div>
                                         <div class="box-widget-author-title_opt">
-                                            <a href="https://wa.me/{{ preg_replace("/[^0-9]/", "", $company->phone) }}" class="tolt green-bg" data-microtip-position="top" data-tooltip="{{ $company->phone }}">
+                                            <a href="https://wa.me/{{ preg_replace("/[^0-9]/", "", $company->phone) }}" class="tolt green-bg" data-microtip-position="top" data-tooltip="{{ $company->phone }}" style="background: #25D366">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
                                         </div>
@@ -380,6 +401,106 @@
                             </div>
                         </div>
                         <!--box-widget-item end -->
+
+                        <!-- list-single-main-item -->
+                        <div class="list-single-main-item fl-wrap block_box hidden-desktop" id="sec5">
+                            <div class="list-single-main-item-title">
+                                <h3><span>{{ $company->reviews()->count() }}</span> Avaliações</h3>
+                            </div>
+                            <!--reviews-score-wrap-->
+                            <div class="reviews-score-wrap fl-wrap" style="height: 130px">
+                                <div class="review-score-total">
+                                    <span class="review-score-total-item">
+                                        {{ number_format($company->rating, 1) }}
+                                    </span>
+                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ number_format($company->rating / 2, 1) }}"></div>
+                                </div>
+                            </div>
+                            @if ($company->reviews)
+                                @foreach($company->reviews as $review)
+                                    <!-- reviews-score-wrap end -->
+                                    <div class="list-single-main-item_content fl-wrap">
+                                        <div class="reviews-comments-wrap" style="width: 100%">
+                                            <!-- reviews-comments-item -->
+                                            <div class="reviews-comments-item" style="padding: 0">
+                                                <div class="reviews-comments-item-text fl-wrap">
+                                                    <div class="reviews-comments-header fl-wrap">
+                                                        <h4>
+                                                            <a href="#">
+                                                                {{ $review->title }}
+                                                            </a>
+                                                        </h4>
+                                                        <small style="float: left; margin-top: 5px">{{ $review->name }}</small>
+                                                        <div class="review-score-user">
+                                                            <span class="review-score-user_item" style="margin-left: 40px">{{ number_format($review->rating, 1) }}</span>
+                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ number_format($review->rating / 2, 1) }}"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p>" {{ $review->message }} "</p>
+                                                </div>
+                                            </div>
+                                            <!--reviews-comments-item end-->
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="list-single-main-item_content fl-wrap">
+                                    <div class="reviews-comments-wrap">
+                                        <div class="reviews-comments-item">
+                                            <div class="reviews-comments-item-text fl-wrap">
+                                                <p>Nenhuma avaliação encontrada.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                        <!-- list-single-main-item end -->
+                        <!-- list-single-main-item -->
+                        <div class="list-single-main-item fl-wrap block_box hidden-desktop" id="sec6">
+                            <div class="list-single-main-item-title fl-wrap">
+                                <h3>Deixe sua avaliação</h3>
+                            </div>
+                            <!-- Add Review Box -->
+                            <div id="add-review" class="add-review-box">
+                                <!-- Review Comment -->
+                                <form id="add-comment" class="add-comment custom-form" name="rangeCalc" method="post" action={{ route('company.review.store', ['company' => $company->slug]) }}>
+                                    @csrf
+                                    <fieldset>
+                                        <div class="review-score-form fl-wrap">
+                                            <div class="review-range-container">
+                                                <!-- review-range-item-->
+                                                <div class="review-range-item">
+                                                    <div class="range-slider-title" style="width: 100%" >Dê uma nota de 0 a 10</div>
+                                                    <div class="range-slider-wrap ">
+                                                        <input type="text" class="rate-range" name="rating" data-min="0" data-max="10"  name="rgcl"  data-step="1" value="5">
+                                                    </div>
+                                                </div>
+                                                <!-- review-range-item end -->
+                                            </div>
+                                        </div>
+                                        <div class="list-single-main-item_content fl-wrap">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label><i class="fal fa-user"></i></label>
+                                                    <input type="text" placeholder="Nome *" name="name" value="" required />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label><i class="fa fa-message"></i></label>
+                                                    <input type="text" placeholder="Título *" name="title" value="" required />
+                                                </div>
+                                            </div>
+                                            <textarea cols="40" rows="3" name="message" placeholder="Avaliação:"></textarea>
+                                            <div class="clearfix"></div>
+                                            <div class="clearfix"></div>
+                                            <button type="submit" class="btn color2-bg float-btn">Enviar Avaliação <i class="fal fa-paper-plane"></i></button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- Add Review Box / End -->
+                        </div>
+                        <!-- list-single-main-item end -->
                     </div>
                     <!-- list-single-sidebar end -->
                 </div>

@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/empresas', [PagesController::class, 'listing'])->name('listing');
 Route::get('/empresa/{company:slug}/avaliacao', [PagesController::class, 'reviewCompany'])->name('company.review');
-Route::get('/empresa/{city}/{company:slug}', [PagesController::class, 'viewCompany'])->name('listing.view');
+Route::get('/empresa/{category}/{city}/{company:slug}', [PagesController::class, 'viewCompany'])->name('listing.view');
 Route::post('/empresa/{company:slug}/avaliacao', [PagesController::class, 'storeReviewCompany'])->name('company.review.store');
 Route::post('/empresa/{company:slug}/contato', [PagesController::class, 'contactCompany'])->name('company.contact');
 Route::get('/cadastro', [PagesController::class, 'register'])->name('register');
