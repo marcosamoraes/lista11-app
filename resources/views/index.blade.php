@@ -78,7 +78,7 @@
                 </div>
             @endif
 
-            <div class="section-title">
+            <div class="section-title" style="margin-top: 50px">
                 <h2>LOCAIS EM DESTAQUE</h2>
                 <div class="section-subtitle">LOCAIS EM DESTAQUE</div>
             </div>
@@ -86,11 +86,11 @@
                 <div class="listing-slider fl-wrap">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <!--  swiper-slide  -->
-                            <div class="swiper-slide">
-                                <div class="listing-slider-item fl-wrap">
-                                    @foreach($featuredCompanies as $featuredCompany)
-                                        <!-- listing-item  -->
+                            @foreach($featuredCompanies as $featuredCompany)
+                                <!--  swiper-slide  -->
+                                <div class="swiper-slide">
+                                    <div class="listing-slider-item fl-wrap">
+                                    <!-- listing-item  -->
                                         <div class="listing-item listing_carditem">
                                             <article class="geodir-category-listing fl-wrap">
                                                 <div class="geodir-category-img">
@@ -108,7 +108,6 @@
                                                         </div>
                                                         <div class="listing-rating-count-wrap">
                                                             <div class="review-score">{{ number_format($featuredCompany->rating, 1) }}</div>
-                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ number_format($featuredCompany->rating / 2, 1) }}"></div>
                                                             <br>
                                                             <div class="reviews-count">{{ $featuredCompany->reviews()->count() }} Avaliações</div>
                                                         </div>
@@ -123,10 +122,10 @@
                                             </article>
                                         </div>
                                         <!-- listing-item end -->
-                                    @endforeach
+                                    </div>
                                 </div>
-                            </div>
-                            <!--  swiper-slide end  -->
+                                <!--  swiper-slide end  -->
+                            @endforeach
                         </div>
                     </div>
                     <div class="listing-carousel-button listing-carousel-button-next2"><i class="fas fa-caret-right"></i></div>
