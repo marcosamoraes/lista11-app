@@ -318,7 +318,16 @@
                                     <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
                                         <ul class="no-list-style">
                                             <li><span><i class="fal fa-map-marker"></i> Endereço :</span> <a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}">{{ $company->full_address }}</a></li>
-                                            <li><span><i class="fal fa-phone"></i> Telefone :</span> <a target="_blank" href="tel:{{ preg_replace("/[^0-9]/", "", $company->phone2) }}">{{ $company->phone2 }}</a></li>
+                                            <li><span><i class="fal fa-phone"></i> Telefone :</span> <a target="_blank" href="tel:{{ preg_replace("/[^0-9]/", "", $company->phone) }}">{{ $company->phone }}</a></li>
+                                            @if ($company->phone2)
+                                                <li><span><i class="fal fa-phone"></i> Telefone 2 :</span> <a target="_blank" href="tel:{{ preg_replace("/[^0-9]/", "", $company->phone2) }}">{{ $company->phone2 }}</a></li>
+                                            @endif
+                                            @if ($company->whatsapp)
+                                                <li><span><i class="fab fa-whatsapp"></i> Whatsapp :</span> <a target="_blank" href="https://wa.me/+55{{ preg_replace("/[^0-9]/", "", $company->whatsapp) }}">{{ $company->whatsapp }}</a></li>
+                                            @endif
+                                            @if ($company->whatsapp2)
+                                                <li><span><i class="fab fa-whatsapp"></i> Whatsapp 2 :</span> <a target="_blank" href="https://wa.me/+55{{ preg_replace("/[^0-9]/", "", $company->whatsapp2) }}">{{ $company->whatsapp2 }}</a></li>
+                                            @endif
                                             <li><span><i class="fal fa-envelope"></i> E-mail :</span> <a target="_blank" href="mailto:{{ $company->email }}">{{ $company->email }}</a></li>
                                             <li><span><i class="fal fa-browser"></i> Site :</span> <a target="_blank" href="{{ $company->site }}">{{ $company->site }}</a></li>
                                         </ul>
