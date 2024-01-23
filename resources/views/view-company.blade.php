@@ -116,7 +116,7 @@
                         <div class="list-single-main-wrapper fl-wrap" id="sec2">
                             @if ($company->image)
                                 <div class="list-single-main-media fl-wrap">
-                                    <img src="{{ env('ADMIN_URL') . '/storage/' . $company->image  }}" class="respimg" alt="">
+                                    <img src="{{ env('ADMIN_URL') . '/storage/' . $company->image  }}" class="respimg" alt="" style="max-width: 500px">
                                 </div>
                             @endif
                             <!-- list-single-main-item -->
