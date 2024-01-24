@@ -159,10 +159,7 @@ class Company extends Model
      */
     public function scopeApproved($query)
     {
-        return $query->where('status', true)
-            ->whereHas('orders', function ($query) {
-                $query->whereIn('status', [OrderStatusEnum::Accomplished->value, OrderStatusEnum::Opened->value]);
-            });
+        return $query->where('status', true);
     }
 
     /**
@@ -170,10 +167,7 @@ class Company extends Model
      */
     public function isApproved(): Attribute
     {
-        return Attribute::get(fn () =>
-            $this->status &&
-            $this->orders()->whereIn('status', [OrderStatusEnum::Accomplished->value, OrderStatusEnum::Opened->value])->where('expire_at', '>', now())->exists()
-        );
+        return Attribute::get(fn () => $this->status);
     }
 
     /**

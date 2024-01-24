@@ -33,6 +33,8 @@ Route::post('/contato', [PagesController::class, 'storeContact'])->name('contact
 
 Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
+Route::get('/reload-captcha', [PagesController::class, 'reloadCaptcha']);
+
 Route::get('/mailable', function () {
     return (new ClientCreated('123456'))->toMail(User::first());
 });

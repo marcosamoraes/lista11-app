@@ -36,6 +36,13 @@ return [
             'throw' => false,
         ],
 
+        'captcha' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/captcha'),
+            'url' => env('APP_URL').'/storage/captcha/',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

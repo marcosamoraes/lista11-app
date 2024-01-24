@@ -63,6 +63,22 @@
         });
     </script>
 
+    @if ($errors->any())
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var alert = document.getElementById('alert-message');
+                var alertData = {!! json_encode($errors->all()) !!};
+
+                if (alertData) {
+                    alert.innerHTML = '<div class="alert alert-error">' + alertData[0] + '</div>';
+                    setTimeout(function() {
+                        alert.innerHTML = '';
+                    }, 5000);
+                }
+            });
+        </script>
+    @endif
+
     <style>
         .alert {
             padding: 10px;

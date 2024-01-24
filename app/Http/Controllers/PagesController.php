@@ -142,6 +142,11 @@ class PagesController extends Controller
 
     public function storeContact(Request $request)
     {
+        if ($request->lastname) {
+            $this->showAlert('Captcha inválido.', 'error');
+            return back();
+        }
+
         Contact::create([
             'name'          => $request->name,
             'email'         => $request->email,
@@ -187,5 +192,10 @@ class PagesController extends Controller
         ];
 
         session()->flash('alert', $alert);
+    }
+
+    public function reloadCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
 }

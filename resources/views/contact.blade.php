@@ -39,14 +39,15 @@
                                         @csrf
                                         <fieldset>
                                             <label><i class="fal fa-user"></i></label>
-                                            <input type="text" name="name" id="name" placeholder="Nome *" value=""/>
+                                            <input type="text" name="name" id="name" placeholder="Nome *" value="" required />
                                             <div class="clearfix"></div>
                                             <label><i class="fal fa-envelope"></i>  </label>
-                                            <input type="text" name="email" id="email" placeholder="E-mail *" value=""/>
+                                            <input type="text" name="email" id="email" placeholder="E-mail *" value="" required />
                                             <div class="clearfix"></div>
                                             <label><i class="fab fa-whatsapp"></i>  </label>
-                                            <input type="text" name="whatsapp" id="whatsapp" placeholder="Whatsapp *" value=""/>
+                                            <input type="text" name="whatsapp" id="whatsapp" placeholder="Whatsapp *" value="" required />
                                             <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Mensagem:"></textarea>
+                                            <input type="hidden" name="lastname">
                                         </fieldset>
                                         <button class="btn float-btn color2-bg" id="submit">Enviar<i class="fal fa-paper-plane"></i></button>
                                     </form>
@@ -66,4 +67,16 @@
         </section>
     </div>
     <!--content end-->
+
+    <script type="text/javascript">
+        $('#reload').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'reload-captcha',
+                success: function (data) {
+                    $(".captcha span").html(data.captcha);
+                }
+            });
+        });
+    </script>
 @endsection
