@@ -183,6 +183,22 @@
                                 <!-- list-single-main-item end -->
                             @endif
 
+
+                            @if ($company->photo_360_code)
+                                <!-- list-single-main-item -->
+                                <div class="list-single-main-item fl-wrap block_box">
+                                    <div class="list-single-main-item-title">
+                                        <h3>Foto 360º</h3>
+                                    </div>
+                                    <div class="list-single-main-item_content fl-wrap">
+                                        <div class="listing-features fl-wrap">
+                                            {!! $company->photo_360_code !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list-single-main-item end -->
+                            @endif
+
                             <!-- list-single-main-item -->
                             <div class="list-single-main-item fl-wrap block_box hidden-mobile" id="sec5">
                                 <div class="list-single-main-item-title">
