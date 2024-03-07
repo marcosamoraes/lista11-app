@@ -107,11 +107,11 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="listing-rating-count-wrap">
+                                                                {{-- <div class="listing-rating-count-wrap">
                                                                     <div class="review-score">{{ number_format($featuredCompany->rating, 1) }}</div>
                                                                     <br>
                                                                     <div class="reviews-count">{{ $featuredCompany->reviews()->count() }} Avaliações</div>
-                                                                </div>
+                                                                </div> --}}
                                                                 <div class="listing_carditem_footer fl-wrap">
                                                                     <a class="listing-item-category-wrap" href="#">
                                                                         <div class="listing-item-category" style="width:0"></div>
