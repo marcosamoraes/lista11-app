@@ -205,7 +205,7 @@
                             <div class="listing-item">
                                 <article class="geodir-category-listing fl-wrap">
                                     <div class="geodir-category-img">
-                                        <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                        <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}" class="geodir-category-img-wrap2 fl-wrap">
                                             <div style="background-image: url({{ $newCompany->image ? env('ADMIN_URL') . '/storage/' . $newCompany->image : '/logo.webp' }}); height: 300px; background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
                                         </a>
                                         <div class="geodir-category-opt">
