@@ -169,7 +169,7 @@
                                         <h3>Conexões com aplicativos</h3>
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
-                                        <div class="single-carousel-wrap fl-wrap lightgallery">
+                                        <div class="single-carousel-wrap fl-wrap lightgallery" style="height: 100px">
                                             <div class="sc-next sc-btn color2-bg"><i class="fas fa-caret-right"></i></div>
                                             <div class="sc-prev sc-btn color2-bg"><i class="fas fa-caret-left"></i></div>
                                             <div class="single-carousel fl-wrap full-height">
