@@ -195,29 +195,6 @@
                                 <!-- list-single-main-item end -->
                             @endif
 
-                            @if ($company->companyApps)
-                                <!-- list-single-main-item -->
-                                <div class="list-single-main-item fl-wrap block_box">
-                                    <div class="list-single-main-item-title">
-                                        <h3>Conexões com aplicativos</h3>
-                                    </div>
-                                    <div class="list-single-main-item_content fl-wrap">
-                                        <div class="listing-features fl-wrap">
-                                            <ul class="no-list-style">
-                                                @foreach($company->companyApps as $companyApp)
-                                                    <li>
-                                                        <a href="{{ $companyApp->url }}" rel="noreferrer">
-                                                            <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- list-single-main-item end -->
-                            @endif
-
                             @if ($company->photo_360_code)
                                 <!-- list-single-main-item -->
                                 <div class="list-single-main-item fl-wrap block_box">
