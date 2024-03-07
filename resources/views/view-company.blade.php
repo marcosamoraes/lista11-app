@@ -206,7 +206,7 @@
                                                 <div class="reviews-comments-item" style="padding: 0">
                                                     <div class="reviews-comments-item-text fl-wrap">
                                                         <div class="reviews-comments-header fl-wrap">
-                                                            <h4>
+                                                            <h4 style="margin-top: 20px">
                                                                 <a href="#">
                                                                     {{ $review->title }}
                                                                 </a>
@@ -434,7 +434,7 @@
                                             <div class="reviews-comments-item" style="padding: 0">
                                                 <div class="reviews-comments-item-text fl-wrap">
                                                     <div class="reviews-comments-header fl-wrap">
-                                                        <h4>
+                                                        <h4 style="margin-top: 20px">
                                                             <a href="#">
                                                                 {{ $review->title }}
                                                             </a>

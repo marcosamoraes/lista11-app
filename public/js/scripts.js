@@ -16,11 +16,11 @@ function initTowhub() {
     if ($(".listing-slider").length > 0) {
         var lsw = new Swiper(".listing-slider .swiper-container", {
             preloadImages: false,
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 15,
             loop: true,
 
-            grabCursor: true,
+            grabCursor: false,
             mousewheel: false,
             centeredSlides: true,
             pagination: {
@@ -34,10 +34,10 @@ function initTowhub() {
             },
             breakpoints: {
                 1650: {
-                    slidesPerView: 3,
+                    slidesPerView: 5,
                 },
                 1270: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 },
                 850: {
                     slidesPerView: 1,

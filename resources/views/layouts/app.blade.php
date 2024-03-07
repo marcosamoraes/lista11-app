@@ -128,7 +128,9 @@
 
         @include('components.footer')
 
-        <a href="#" class="to-top"><i class="fas fa-caret-up"></i></a>
+        <a href="https://wa.me/5517981463338" target="_blank" class="to-top">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
     <!-- Main end -->
 
@@ -139,7 +141,7 @@
     <script src="https://kit.fontawesome.com/411831a5a4.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/scripts.js'). '?v=' . filemtime(public_path('js/scripts.js')) }}"></script>
 
     @stack('scripts')
 </body>

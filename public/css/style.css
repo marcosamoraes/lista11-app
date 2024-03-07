@@ -2792,24 +2792,25 @@ section.gray-section .section-separator {
 }
 /*------ to-top------------------------------------------------*/
 .to-top {
-	position:fixed;
-	bottom:60px;
-	right:50px;
-	width:40px;
-	height:40px;
-	color:#fff;
-	background: #425998;
-	line-height:40px;
-	font-size:17px;
-	z-index:116;
-	cursor:pointer;
-	display:none;
-	border-radius:3px;
-	box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2);
-	-webkit-transform: translate3d(0,0,0);
+    position: fixed;
+    bottom: 60px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background: #25D366; /* WhatsApp green color */
+    line-height: 60px;
+    font-size: 34px;
+    z-index: 116;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%; /* Make the button round */
+    box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2);
+    -webkit-transform: translate3d(0,0,0);
+    text-align: center; /* Center the icon */
 }
 .to-top:hover {
-	background:#253966;
+	background:#128C7E;
 }
 .to-top.to-top_footer {
 	position:absolute;
@@ -4122,8 +4123,8 @@ section.gray-section .section-separator {
 	left:0;
 	bottom:0;
 	right:0;
-	top:30%;
-	background: linear-gradient(to bottom, rgba(6,27,65,0) 0%,rgba(6,27,65,0.95) 100%);
+	top:10%;
+	background: linear-gradient(to bottom, rgba(6,27,65,0) 0%,rgba(0,0,0,1) 100%);
 	z-index:2;
 }
 .listing_carditem_footer .listing-item-category-wrap span  , .listing_carditem .geodir-category-location a , .listing_carditem_footer .geodir-category_price .price-level-item strong  , .listing_carditem_footer .post-author a span{
@@ -4431,6 +4432,7 @@ section.gray-section .section-separator {
 	padding:2px 20px 20px;
 	margin-bottom:10px;
 	border-bottom:1px solid #eee;
+    height: 100px;
 }
 .geodir-category-content-title-item {
 	float:left;
@@ -4509,6 +4511,8 @@ section.gray-section .section-separator {
 }
 .geodir-category-text {
 	padding:0 20px;
+    height: 75px;
+    overflow-y: hidden;
 }
 .geodir-opt-list li {
 	float:left;
@@ -7647,8 +7651,8 @@ section.gray-section .section-separator {
 }
 .collage-image .main-collage-image {
     position: absolute;
-    right: -120px;
-    bottom: -120px;
+    right: -250px;
+    bottom: -80px;
 	z-index:2;
 }
 .colomn-text-title h3 {

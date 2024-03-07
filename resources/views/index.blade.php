@@ -88,43 +88,46 @@
                         <div class="swiper-wrapper">
                             @foreach($featuredCompanies as $featuredCompany)
                                 <!--  swiper-slide  -->
-                                <div class="swiper-slide">
-                                    <div class="listing-slider-item fl-wrap">
-                                    <!-- listing-item  -->
-                                        <div class="listing-item listing_carditem">
-                                            <article class="geodir-category-listing fl-wrap">
-                                                <div class="geodir-category-img">
-                                                    <a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
-                                                        <div style="background-image: url({{ $featuredCompany->image ? env('ADMIN_URL') . '/storage/' . $featuredCompany->image : '/logo.webp' }}); background-repeat: no-repeat; background-size: cover; background-position: center center;"></div>
-                                                    </a>
-                                                    <div class="geodir-category-opt">
-                                                        <div class="geodir-category-opt_title" style="max-width: 50%">
-                                                            <h4><a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
-                                                            <div class="geodir-category-location">
-                                                                <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}">
-                                                                    <i class="fas fa-map-marker-alt"></i> {{ $featuredCompany->full_address }}
-                                                                </a>
+                                <a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                    <div class="swiper-slide">
+                                        <div class="listing-slider-item fl-wrap">
+                                        <!-- listing-item  -->
+                                                <div class="listing-item listing_carditem">
+                                                    <article class="geodir-category-listing fl-wrap">
+                                                        <div class="geodir-category-img">
+                                                            <a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}" class="geodir-category-img-wrap fl-wrap">
+                                                                <div style="background-image: url({{ $featuredCompany->image ? env('ADMIN_URL') . '/storage/' . $featuredCompany->image : '/logo.webp' }}); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 300px"></div>
+                                                            </a>
+                                                            <div class="geodir-category-opt">
+                                                                <div class="geodir-category-opt_title" style="max-width: 50%">
+                                                                    <h4><a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
+                                                                    <div class="geodir-category-location">
+                                                                        <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}">
+                                                                            <i class="fas fa-map-marker-alt"></i> {{ $featuredCompany->full_address }}
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="listing-rating-count-wrap">
+                                                                    <div class="review-score">{{ number_format($featuredCompany->rating, 1) }}</div>
+                                                                    <br>
+                                                                    <div class="reviews-count">{{ $featuredCompany->reviews()->count() }} Avaliações</div>
+                                                                </div>
+                                                                <div class="listing_carditem_footer fl-wrap">
+                                                                    <a class="listing-item-category-wrap" href="#">
+                                                                        <div class="listing-item-category" style="width:0"></div>
+                                                                        <span>{{ $featuredCompany->categories[0]->name }}</span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="listing-rating-count-wrap">
-                                                            <div class="review-score">{{ number_format($featuredCompany->rating, 1) }}</div>
-                                                            <br>
-                                                            <div class="reviews-count">{{ $featuredCompany->reviews()->count() }} Avaliações</div>
-                                                        </div>
-                                                        <div class="listing_carditem_footer fl-wrap">
-                                                            <a class="listing-item-category-wrap" href="#">
-                                                                <div class="listing-item-category" style="width:0"></div>
-                                                                <span>{{ $featuredCompany->categories[0]->name }}</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
+                                                    </article>
                                                 </div>
-                                            </article>
+                                            </a>
+                                            <!-- listing-item end -->
                                         </div>
-                                        <!-- listing-item end -->
                                     </div>
-                                </div>
-                                <!--  swiper-slide end  -->
+                                    <!--  swiper-slide end  -->
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -225,7 +228,7 @@
                                             </div>
                                         </div>
                                         <div class="geodir-category-text fl-wrap">
-                                            <p class="small-text">{{ $newCompany->description }}</p>
+                                            <p class="small-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ $newCompany->description }}</p>
                                         </div>
                                         <div class="geodir-category-footer fl-wrap">
                                             <a class="listing-item-category-wrap" href="#">
@@ -315,7 +318,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="collage-image">
-                            <img src="images/api.webp" class="main-collage-image" alt="">
+                            <img src="images/api.webp" class="main-collage-image" alt="" style="width: 800px">
                             <div class="images-collage-title color2-bg icdec"> <img src="logo.webp"   alt=""></div>
                             <div class="images-collage_icon green-bg" style="right:-20px; top:120px;"><i class="fal fa-thumbs-up"></i></div>
                             <div class="collage-image-min cim_1"><img src="favicon.webp" alt="" style="background: white"></div>
@@ -359,15 +362,15 @@
             <div style="margin-top: 50px">
                 <a href="https://stormweb.com.br" target="_blank" class="btn  dec_btn  color2-bg">Ir para o site<i class="fal fa-arrow-alt-right"></i></a>
             </div>
-            <div class="container" style="margin-top: 80px">
-                <div class="row">
+            <div class="container">
+                <div class="row" style="margin-top: 50px">
                     <div class="col-md-6">
-                        <img src="images/marketing-digital.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                        <img src="images/criacao-de-sites.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
                     </div>
                     <div class="col-md-6" style="text-align: left">
-                        <h2 style="font-size: 38px">Marketing Digital</h2>
+                        <h2 style="font-size: 38px">Criação de Site</h2>
                         <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
-                            O Poder do Marketing Digital pode transformar seu negócio! Nós da agência lista11 vamos te ajudar a construir estratégias eficazes que vão atrair novos clientes como também a forma de fazer com que o seu produto e serviço alcance mais pessoas.
+                            Ter um site personalizado é a melhor forma de uma empresa mostrar a sua identidade e se comunicar com a sua persona. Nós somos especialistas na criação de sites e à partir de um planejamento, vamos desenvolver o seu site de acordo com a imagem e o conteúdo que você deseja.
                         </p>
                         <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
@@ -379,14 +382,18 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6" style="text-align: left">
-                        <h2 style="font-size: 38px">Experiência 360º Street View</h2>
+                        <h2 style="font-size: 38px">Gestão de mídias sociais</h2>
                         <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
-                            O Street View do Google Maps é uma representação virtual do ambiente que nos cerca composta de milhões de imagens panorâmicas, disponível no Google Maps. O conteúdo do Street View tem duas origens: o Google e colaboradores.
+                            Atualmente, o Brasil possui mais de 150 milhões de usuários nas redes sociais. E se os seus clientes estão lá, é lá que você precisa estar também.<br /><br />
+                            As redes sociais são ferramentas indispensáveis para as empresas atingirem seu público-alvo.<br /><br />
+                            Afinal, quem não é visto não é lembrado. Entre as principais vantagens de ter o gerenciamento das suas redes sociais, estão: reconhecimento de marca, relacionamento com o cliente, aumento de vendas e geração de leads.<br /><br />
+                            Sua identidade digital é um fator determinante para o cliente te escolher. Sua rede social é a sua vitrine. Então, que tal deixar sua vitrine mais profissional?<br />
+                            Você não precisa se preocupar com nada. Cuide dos seus negócios enquanto cuidamos da sua presença digital.
                         </p>
                         <a href="https://www.lista11.com.br/empresa-confianca-google-programa-trusted" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
                     <div class="col-md-6">
-                        <img src="images/experiencia_360_street_view.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                        <img src="images/redes-sociais.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
                     </div>
                 </div>
                 <div class="row">
@@ -396,12 +403,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="images/criacao_de_sites.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                        <img src="images/google-ads.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
                     </div>
                     <div class="col-md-6" style="text-align: left">
-                        <h2 style="font-size: 38px">Criação de Sites</h2>
+                        <h2 style="font-size: 38px">Gestão de Google ADS</h2>
                         <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
-                            Quer atrair novos clientes com um site fantástico e personalizado e por um preço que cabe no seu bolso? A Agência Lista11 vai te ajudar!
+                            Fuja do amadorismo digital. Aumente o faturamento de seu negocio com as melhores estratégias de trafego pago.<br />
+                            Somos uma agencia com mais de 10 anos no mercado especializada em estratégias eficazes no google ads, otimizando cada campanha para atingir seus objetivos.
                         </p>
                         <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
