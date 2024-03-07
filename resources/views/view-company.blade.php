@@ -160,6 +160,41 @@
                                 <!-- list-single-main-item end -->
                             @endif
                             <!-- list-single-main-item end -->
+
+
+                            @if ($company->companyApps)
+                                <!-- list-single-main-item-->
+                                <div class="list-single-main-item fl-wrap block_box" id="sec3">
+                                    <div class="list-single-main-item-title">
+                                        <h3>Conexões com aplicativos</h3>
+                                    </div>
+                                    <div class="list-single-main-item_content fl-wrap">
+                                        <div class="single-carousel-wrap fl-wrap lightgallery">
+                                            <div class="sc-next sc-btn color2-bg"><i class="fas fa-caret-right"></i></div>
+                                            <div class="sc-prev sc-btn color2-bg"><i class="fas fa-caret-left"></i></div>
+                                            <div class="single-carousel fl-wrap full-height">
+                                                <div class="swiper-container">
+                                                    <div class="swiper-wrapper">
+                                                        @foreach ($company->companyApps as $companyApp)
+                                                            <!-- swiper-slide-->
+                                                            <div class="swiper-slide">
+                                                                <div class="box-item">
+                                                                    <a href="{{ $companyApp->url }}" rel="noreferrer">
+                                                                        <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- swiper-slide end-->
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list-single-main-item end -->
+                            @endif
+
                             @if ($company->companyApps)
                                 <!-- list-single-main-item -->
                                 <div class="list-single-main-item fl-wrap block_box">
@@ -182,7 +217,6 @@
                                 </div>
                                 <!-- list-single-main-item end -->
                             @endif
-
 
                             @if ($company->photo_360_code)
                                 <!-- list-single-main-item -->
