@@ -222,9 +222,8 @@
                                             <div class="geodir-category-content-title-item">
                                                 <h3 class="title-sin_map">
                                                     <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}">
-                                                        <p>{{ $newCompany->name }}</p>
+                                                        <p style="min-height: 100px">{{ $newCompany->name }}</p>
                                                     </a>
-                                                    <span class="verified-badge"><i class="fal fa-check"></i></span>
                                                 </h3>
                                                 <div class="geodir-category-location fl-wrap"><a target="_blank" href="https://www.google.com/maps/place/{{ $newCompany->full_address }}"><i class="fas fa-map-marker-alt"></i> {{ $newCompany->full_address }}</a></div>
                                             </div>
