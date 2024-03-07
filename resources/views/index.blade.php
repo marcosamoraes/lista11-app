@@ -99,7 +99,7 @@
                                                                 <div style="background-image: url({{ $featuredCompany->image ? env('ADMIN_URL') . '/storage/' . $featuredCompany->image : '/logo.webp' }}); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 300px"></div>
                                                             </a>
                                                             <div class="geodir-category-opt">
-                                                                <div class="geodir-category-opt_title" style="max-width: 50%">
+                                                                <div class="geodir-category-opt_title">
                                                                     <h4><a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
                                                                     <div class="geodir-category-location">
                                                                         <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}">
