@@ -222,7 +222,7 @@
                                             <div class="geodir-category-content-title-item">
                                                 <h3 class="title-sin_map">
                                                     <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}">
-                                                        <p style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ $newCompany->name }}</p>
+                                                        <p>{{ $newCompany->name }}</p>
                                                     </a>
                                                     <span class="verified-badge"><i class="fal fa-check"></i></span>
                                                 </h3>
