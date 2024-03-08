@@ -362,16 +362,32 @@
                                     <div class="list-widget-social bottom-bcw-box  fl-wrap">
                                         <ul class="no-list-style">
                                             @if ($company->facebook)
-                                                <li><a href="{{ $company->facebook }}" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
+                                                <li>
+                                                    <a href="{{ $company->facebook }}" target="_blank">
+                                                        <img src="{{ asset('images/facebook.png') }}" alt="">
+                                                    </a>
+                                                </li>
                                             @endif
                                             @if ($company->instagram)
-                                                <li><a href="{{ $company->instagram }}" target="_blank" ><i class="fab fa-instagram"></i></a></li>
+                                                <li>
+                                                    <a href="{{ $company->instagram }}" target="_blank">
+                                                        <img src="{{ asset('images/instagram.png') }}" alt="">
+                                                    </a>
+                                                </li>
                                             @endif
                                             @if ($company->youtube)
-                                                <li><a href="{{ $company->youtube }}" target="_blank" ><i class="fab fa-youtube"></i></a></li>
+                                                <li>
+                                                    <a href="{{ $company->youtube }}" target="_blank">
+                                                        <img src="{{ asset('images/youtube.png') }}" alt="">
+                                                    </a>
+                                                </li>
                                             @endif
                                             @if ($company->google_my_business)
-                                                <li><a href="{{ $company->google_my_business }}" target="_blank" ><i class="fab fa-google"></i></a></li>
+                                                <li>
+                                                    <a href="{{ $company->google_my_business }}" target="_blank">
+                                                        <img src="{{ asset('images/google.png') }}" alt="">
+                                                    </a>
+                                                </li>
                                             @endif
                                         </ul>
                                         <div class="bottom-bcw-box_link">
