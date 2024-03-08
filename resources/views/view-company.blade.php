@@ -218,7 +218,7 @@
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
                                         <div class="listing-features fl-wrap">
-                                            {!! $company->photo_360_code !!}
+                                            {!! str_replace('width="1200"', 'width="100%"', $company->photo_360_code) !!}
                                         </div>
                                     </div>
                                 </div>

@@ -135,13 +135,13 @@
     <!-- Main end -->
 
     <link type="text/css" rel="stylesheet" href="{{ asset('css/plugins.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') . '?v=' . filemtime(public_path('css/style.css')) }}">
 
     <!--=============== scripts  ===============-->
     <script src="https://kit.fontawesome.com/411831a5a4.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset('js/scripts.js'). '?v=' . filemtime(public_path('js/scripts.js')) }}"></script>
+    <script src="{{ asset('js/scripts.js') . '?v=' . filemtime(public_path('js/scripts.js')) }}"></script>
 
     @stack('scripts')
 </body>
