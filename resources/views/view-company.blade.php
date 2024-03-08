@@ -195,6 +195,21 @@
                                 <!-- list-single-main-item end -->
                             @endif
 
+                            @if ($company->video_link)
+                                <!-- list-single-main-item -->
+                                <div class="list-single-main-item fl-wrap block_box">
+                                    <div class="list-single-main-item-title">
+                                        <h3>Vídeo</h3>
+                                    </div>
+                                    <div class="list-single-main-item_content fl-wrap">
+                                        <div class="listing-features fl-wrap">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=YDLuPstkO6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list-single-main-item end -->
+                            @endif
+
                             @if ($company->photo_360_code)
                                 <!-- list-single-main-item -->
                                 <div class="list-single-main-item fl-wrap block_box">
