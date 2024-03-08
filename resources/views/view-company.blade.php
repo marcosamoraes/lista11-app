@@ -364,28 +364,28 @@
                                             @if ($company->facebook)
                                                 <li>
                                                     <a href="{{ $company->facebook }}" target="_blank">
-                                                        <img src="{{ asset('images/facebook.png') }}" alt="">
+                                                        <img src="{{ asset('images/facebook.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->instagram)
                                                 <li>
                                                     <a href="{{ $company->instagram }}" target="_blank">
-                                                        <img src="{{ asset('images/instagram.png') }}" alt="">
+                                                        <img src="{{ asset('images/instagram.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->youtube)
                                                 <li>
                                                     <a href="{{ $company->youtube }}" target="_blank">
-                                                        <img src="{{ asset('images/youtube.png') }}" alt="">
+                                                        <img src="{{ asset('images/youtube.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->google_my_business)
                                                 <li>
                                                     <a href="{{ $company->google_my_business }}" target="_blank">
-                                                        <img src="{{ asset('images/google.png') }}" alt="">
+                                                        <img src="{{ asset('images/google.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
