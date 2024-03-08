@@ -363,28 +363,28 @@
                                         <ul class="no-list-style">
                                             @if ($company->facebook)
                                                 <li>
-                                                    <a href="{{ $company->facebook }}" target="_blank">
+                                                    <a href="{{ $company->facebook }}" target="_blank" style="background: none!important">
                                                         <img src="{{ asset('images/facebook.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->instagram)
                                                 <li>
-                                                    <a href="{{ $company->instagram }}" target="_blank">
+                                                    <a href="{{ $company->instagram }}" target="_blank" style="background: none!important">
                                                         <img src="{{ asset('images/instagram.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->youtube)
                                                 <li>
-                                                    <a href="{{ $company->youtube }}" target="_blank">
+                                                    <a href="{{ $company->youtube }}" target="_blank" style="background: none!important">
                                                         <img src="{{ asset('images/youtube.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
                                             @endif
                                             @if ($company->google_my_business)
                                                 <li>
-                                                    <a href="{{ $company->google_my_business }}" target="_blank">
+                                                    <a href="{{ $company->google_my_business }}" target="_blank" style="background: none!important">
                                                         <img src="{{ asset('images/google.png') }}" alt="" style='width: 20px'>
                                                     </a>
                                                 </li>
