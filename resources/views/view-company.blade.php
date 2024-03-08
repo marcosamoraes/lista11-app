@@ -178,11 +178,9 @@
                                                         @foreach ($company->companyApps as $companyApp)
                                                             <!-- swiper-slide-->
                                                             <div class="swiper-slide swiper-slide2">
-                                                                <div class="box-item">
-                                                                    <a href="{{ $companyApp->url }}" rel="noreferrer">
-                                                                        <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
-                                                                    </a>
-                                                                </div>
+                                                                <a href="{{ $companyApp->url }}" rel="noreferrer">
+                                                                    <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
+                                                                </a>
                                                             </div>
                                                             <!-- swiper-slide end-->
                                                         @endforeach
