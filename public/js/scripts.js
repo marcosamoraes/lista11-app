@@ -83,6 +83,23 @@ function initTowhub() {
             },
         });
     }
+    if ($(".single-carousel2").length > 0) {
+        var j2 = new Swiper(".single-carousel2 .swiper-container", {
+            preloadImages: false,
+            freeMode: true,
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            loop: false,
+            grabCursor: true,
+            mousewheel: false,
+            observer: true,
+            observeParents: true,
+            navigation: {
+                nextEl: '.sc-next2',
+                prevEl: '.sc-prev2',
+            },
+        });
+    }
     if ($(".single-slider").length > 0) {
         var j2 = new Swiper(".single-slider .swiper-container", {
             preloadImages: false,

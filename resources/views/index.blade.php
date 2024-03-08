@@ -101,21 +101,10 @@
                                                             <div class="geodir-category-opt">
                                                                 <div class="geodir-category-opt_title">
                                                                     <h4><a href="{{ route('listing.view', ['category' => str()->slug($featuredCompany->categories[0]->name), 'city' => str()->slug($featuredCompany->city), 'company' => $featuredCompany->slug]) }}">{{ $featuredCompany->name }}</a></h4>
-                                                                    <div class="geodir-category-location">
-                                                                        <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}">
-                                                                            <i class="fas fa-map-marker-alt"></i> {{ $featuredCompany->full_address }}
-                                                                        </a>
-                                                                    </div>
                                                                 </div>
-                                                                {{-- <div class="listing-rating-count-wrap">
-                                                                    <div class="review-score">{{ number_format($featuredCompany->rating, 1) }}</div>
-                                                                    <br>
-                                                                    <div class="reviews-count">{{ $featuredCompany->reviews()->count() }} Avaliações</div>
-                                                                </div> --}}
-                                                                <div class="listing_carditem_footer fl-wrap">
-                                                                    <a class="listing-item-category-wrap" href="#">
-                                                                        <div class="listing-item-category" style="width:0"></div>
-                                                                        <span>{{ $featuredCompany->categories[0]->name }}</span>
+                                                                <div class="listing_carditem_footer fl-wrap" style="text-align: left">
+                                                                    <a target="_blank" href="https://www.google.com/maps/place/{{ $featuredCompany->full_address }}" style="color: white">
+                                                                        <i class="fas fa-map-marker-alt" style="color: #4DB7FE"></i> {{ $featuredCompany->city }}/{{ $featuredCompany->state }}
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -143,7 +132,7 @@
         <div class="sec-circle fl-wrap"></div>
         <!--section end-->
         <section class="parallax-section small-par" data-scrollax-parent="true">
-            <div class="bg par-elem "  data-bg="images/bg/banner2.webp" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="bg par-elem "  data-bg="images/bg/banner3.webp" data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="overlay  op7"></div>
             <div class="container">
                 <div class=" single-facts single-facts_2 fl-wrap">
@@ -222,19 +211,14 @@
                                             <div class="geodir-category-content-title-item">
                                                 <h3 class="title-sin_map">
                                                     <a href="{{ route('listing.view', ['category' => str()->slug($newCompany->categories[0]->name), 'city' => str()->slug($newCompany->city), 'company' => $newCompany->slug]) }}">
-                                                        <p style="min-height: 100px">{{ $newCompany->name }}</p>
+                                                        {{ $newCompany->name }}
                                                     </a>
                                                 </h3>
-                                                <div class="geodir-category-location fl-wrap"><a target="_blank" href="https://www.google.com/maps/place/{{ $newCompany->full_address }}"><i class="fas fa-map-marker-alt"></i> {{ $newCompany->full_address }}</a></div>
                                             </div>
                                         </div>
-                                        <div class="geodir-category-text fl-wrap">
-                                            <p class="small-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ $newCompany->description }}</p>
-                                        </div>
-                                        <div class="geodir-category-footer fl-wrap">
-                                            <a class="listing-item-category-wrap" href="#">
-                                                <div class="listing-item-category" style="width:0"></div>
-                                                <span>{{ $featuredCompany->categories[0]->name }}</span>
+                                        <div class="geodir-category-footer fl-wrap" style="text-align: left">
+                                            <a target="_blank" href="https://www.google.com/maps/place/{{ $newCompany->full_address }}">
+                                                <i class="fas fa-map-marker-alt" style="color: #4DB7FE"></i> {{ $newCompany->city }}/{{ $newCompany->state }}
                                             </a>
                                         </div>
                                     </div>
@@ -251,7 +235,7 @@
         <!--section end-->
         <!--section  -->
         <section class="parallax-section" data-scrollax-parent="true">
-            <div class="bg par-elem "  data-bg="images/bg/banner3.webp" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="bg par-elem "  data-bg="images/bg/banner2.webp" data-scrollax="properties: { translateY: '30%' }"></div>
             <div class="overlay op7"></div>
             <!--container-->
             <div class="container">
@@ -426,6 +410,30 @@
             </div>
         </section>
         <!--section end-->
+        <section class="gray-bg">
+            <div class="container">
+                <div style="display: flex; gap: 35px">
+                    <div style="background: #4285f4; border-radius: 10px; padding: 100px 0; display: flex; flex: 1; justify-content: center; align-items: center;">
+                        <a target="_blank" href="https://lista11.com.br/anunciar" class="client-item">
+                            <img src="images/ico_encontre1.webp" alt="" style="width: auto; height: 80px">
+                            <p style="color: white; font-size:20px; margin-top:15px">Lista11</p>
+                        </a>
+                    </div>
+                    <div style="background: #0f9d58; border-radius: 10px; padding: 100px 0; display: flex; flex: 1; justify-content: center; align-items: center; transform: scale(1.1)">
+                        <a target="_blank" href="https://lista360.com.br" class="client-item">
+                            <img src="images/ico_encontre2.webp" alt="" style="width: auto; height: 80px">
+                            <p style="color: white; font-size:20px; margin-top:15px">Lista360</p>
+                        </a>
+                    </div>
+                    <div style="background: #f4b400; border-radius: 10px; padding: 100px 0; display: flex; flex: 1; justify-content: center; align-items: center;">
+                        <a target="_blank" href="https://imovel11.com.br" class="client-item">
+                            <img src="images/ico_encontre3.webp" alt="" style="width: auto; height: 80px">
+                            <p style="color: white; font-size:20px; margin-top:15px">Imóvel11</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <!--content end-->
 @endsection

@@ -169,15 +169,15 @@
                                         <h3>Conexões com aplicativos</h3>
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
-                                        <div class="single-carousel-wrap fl-wrap lightgallery">
-                                            <div class="sc-next sc-btn color2-bg"><i class="fas fa-caret-right"></i></div>
-                                            <div class="sc-prev sc-btn color2-bg"><i class="fas fa-caret-left"></i></div>
-                                            <div class="single-carousel fl-wrap full-height">
+                                        <div class="single-carousel-wrap fl-wrap lightgallery" style="height: 100px!important">
+                                            <div class="sc-next2 sc-btn color2-bg"><i class="fas fa-caret-right"></i></div>
+                                            <div class="sc-prev2 sc-btn color2-bg"><i class="fas fa-caret-left"></i></div>
+                                            <div class="single-carousel2 fl-wrap full-height">
                                                 <div class="swiper-container">
                                                     <div class="swiper-wrapper">
                                                         @foreach ($company->companyApps as $companyApp)
                                                             <!-- swiper-slide-->
-                                                            <div class="swiper-slide">
+                                                            <div class="swiper-slide swiper-slide2">
                                                                 <div class="box-item">
                                                                     <a href="{{ $companyApp->url }}" rel="noreferrer">
                                                                         <img src="{{ env('ADMIN_URL') . '/storage/' . $companyApp->app->image  }}" alt="" width="100" height="100">
@@ -203,7 +203,7 @@
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
                                         <div class="listing-features fl-wrap">
-                                            <iframe width="560" height="315" src="{{ str_replace('watch?v=', 'embed/', $company->video_link) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            <iframe width="100%" height="315" src="{{ str_replace('watch?v=', 'embed/', $company->video_link) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
