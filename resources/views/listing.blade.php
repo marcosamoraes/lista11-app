@@ -111,7 +111,7 @@
                                                             </h3>
                                                         </div>
                                                     </div>
-                                                    <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-category-footer fl-wrap" style="text-align: left">
                                                         <a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}">
                                                             <i class="fas fa-map-marker-alt" style="color: #4DB7FE"></i> {{ $company->city }}/{{ $company->state }}
                                                         </a>
