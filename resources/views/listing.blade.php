@@ -109,16 +109,11 @@
                                                                 </a>
                                                                 <span class="verified-badge"><i class="fal fa-check"></i></span>
                                                             </h3>
-                                                            <div class="geodir-category-location fl-wrap"><a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}"><i class="fas fa-map-marker-alt"></i> {{ $company->full_address }}</a></div>
                                                         </div>
                                                     </div>
-                                                    <div class="geodir-category-text fl-wrap">
-                                                        <p class="small-text">{{ $company->description }}</p>
-                                                    </div>
                                                     <div class="geodir-category-footer fl-wrap">
-                                                        <a class="listing-item-category-wrap" href="#">
-                                                            <div class="listing-item-category" style="width:0"></div>
-                                                            <span>{{ $company->categories[0]->name }}</span>
+                                                        <a target="_blank" href="https://www.google.com/maps/place/{{ $company->full_address }}">
+                                                            <i class="fas fa-map-marker-alt" style="color: #4DB7FE"></i> {{ $company->city }}/{{ $company->state }}
                                                         </a>
                                                     </div>
                                                 </div>
