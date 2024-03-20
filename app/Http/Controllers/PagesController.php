@@ -142,11 +142,6 @@ class PagesController extends Controller
 
     public function storeContact(Request $request)
     {
-        if ($request->lastname) {
-            $this->showAlert('Captcha inválido.', 'error');
-            return back();
-        }
-
         Contact::create([
             'name'          => $request->name,
             'email'         => $request->email,
@@ -182,6 +177,11 @@ class PagesController extends Controller
     public function tour360()
     {
         return view('tour360');
+    }
+
+    public function privacy()
+    {
+        return view('privacy');
     }
 
     private function showAlert(string $message, string $type = 'success')

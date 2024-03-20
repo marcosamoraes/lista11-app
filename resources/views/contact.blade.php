@@ -3,6 +3,12 @@
 @section('title', 'Destacando sua empresa na internet.')
 
 @section('content')
+    @php
+        $captcha1 = rand(1, 9);
+        $captcha2 = rand(1, 9);
+        $captcha = $captcha1 + $captcha2;
+    @endphp
+
     <!-- content-->
     <div class="content">
         <!--  section  -->
@@ -46,10 +52,12 @@
                                             <div class="clearfix"></div>
                                             <label><i class="fab fa-whatsapp"></i>  </label>
                                             <input type="text" name="whatsapp" id="whatsapp" placeholder="Whatsapp *" value="" required />
+                                            <div class="clearfix"></div>
+                                            <label for="captcha"><i class="fal fa-shield-check"></i></label>
+                                            <input type="text" name="captcha" id="captcha" placeholder="Quanto é {{ $captcha1 }} + {{ $captcha2 }}? *" value="" required />
                                             <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Mensagem:"></textarea>
-                                            <input type="hidden" name="lastname">
                                         </fieldset>
-                                        <button class="btn float-btn color2-bg" id="submit">Enviar<i class="fal fa-paper-plane"></i></button>
+                                        <button type="submit" class="btn float-btn color2-bg">Enviar<i class="fal fa-paper-plane"></i></button>
                                     </form>
                                 </div>
                                 <!-- contact form  end-->
@@ -67,16 +75,24 @@
         </section>
     </div>
     <!--content end-->
+@endsection
 
+@push('scripts')
     <script type="text/javascript">
-        $('#reload').click(function () {
-            $.ajax({
-                type: 'GET',
-                url: 'reload-captcha',
-                success: function (data) {
-                    $(".captcha span").html(data.captcha);
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var captcha = document.querySelector('#captcha').value;
+
+                if (parseInt(captcha) !== {{ $captcha }}) {
+                    alert('Captcha inválido!');
+                    return;
                 }
+
+                e.currentTarget.submit();
             });
         });
     </script>
-@endsection
+@endpush

@@ -2812,6 +2812,26 @@ section.gray-section .section-separator {
 .to-top:hover {
 	background:#128C7E;
 }
+.whatsapp-btn {
+    position: fixed;
+    bottom: 60px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background: #25D366; /* WhatsApp green color */
+    line-height: 60px;
+    font-size: 34px;
+    z-index: 116;
+    cursor: pointer;
+    border-radius: 50%; /* Make the button round */
+    box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2);
+    -webkit-transform: translate3d(0,0,0);
+    text-align: center; /* Center the icon */
+}
+.whatsapp-btn:hover {
+	background:#128C7E;
+}
 .to-top.to-top_footer {
 	position:absolute;
 }

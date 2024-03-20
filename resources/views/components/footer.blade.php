@@ -55,6 +55,7 @@
                                 <li><a href="/tour360">Tour360</a></li>
                                 <li><a href="/blog">Blog</a></li>
                                 <li><a href="/contato">Contato</a></li>
+                                <li><a href="/politicas-de-privacidade">Políticas de Privacidade</a></li>
                             </ul>
                             <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-apple"></i>  Apple Store </a>
                             <a href="#" class=" down-btn color3-bg fl-wrap"><i class="fab fa-android"></i>  Google Play </a>

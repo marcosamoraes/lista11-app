@@ -243,7 +243,7 @@
                     <h4>Conheça o programa Trusted do Google.</h4>
                     <h2>Google Street View</h2>
                 </div>
-                <a href="https://www.youtube.com/watch?v=nFt3wnWM2S4" class="promo-link big_prom image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
+                <a href="https://youtu.be/CQmCWNYuE_k?si=cB2cSRHtOqaegGsi" class="promo-link big_prom image-popup"><i class="fal fa-play"></i><span>Ver vídeo</span></a>
             </div>
         </section>
         <!--section end-->
@@ -366,6 +366,9 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-md-6 desktop-hidden">
+                        <img src="images/redes-sociais.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
+                    </div>
                     <div class="col-md-6" style="text-align: left">
                         <h2 style="font-size: 38px">Gestão de mídias sociais</h2>
                         <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
@@ -377,10 +380,29 @@
                         </p>
                         <a href="https://www.lista11.com.br/empresa-confianca-google-programa-trusted" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mobile-hidden">
                         <img src="images/redes-sociais.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
                     </div>
                 </div>
+
+                <style>
+                    .mobile-hidden {
+                        display: none;
+                    }
+                    .desktop-hidden {
+                        display: block;
+                    }
+
+                    @media (min-width: 768px) {
+                        .mobile-hidden {
+                            display: block;
+                        }
+                        .desktop-hidden {
+                            display: none;
+                        }
+                    }
+                </style>
+
                 <div class="row">
                     <div class="col-12">
                         <img src="/images/traco2.webp" alt="">
@@ -412,7 +434,7 @@
         <!--section end-->
         <section class="gray-bg">
             <div class="container">
-                <div style="display: flex; gap: 35px">
+                <div class="site-options">
                     <div style="background: #4285f4; border-radius: 10px; padding: 100px 0; display: flex; flex: 1; justify-content: center; align-items: center;">
                         <a target="_blank" href="https://lista11.com.br/anunciar" class="client-item">
                             <img src="images/ico_encontre1.webp" alt="" style="width: auto; height: 80px">
@@ -436,4 +458,22 @@
         </section>
     </div>
     <!--content end-->
+
+    <style>
+        .site-options {
+            display: flex;
+            gap: 35px;
+        }
+
+        @media (max-width: 425px) {
+            .site-options {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .site-options > div {
+                padding: 40px 0;
+            }
+        }
+    </style>
 @endsection

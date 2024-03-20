@@ -128,7 +128,15 @@
 
         @include('components.footer')
 
-        <a href="https://wa.me/5517981463338" target="_blank" class="to-top">
+        @php
+            $whatsapp = isset($company) && $company->whatsapp ? $company->whatsapp : '5511932100079';
+            $whatsapp = preg_replace('/\D/', '', $whatsapp);
+            if (!preg_match('/^55/', $whatsapp)) {
+                $whatsapp = '55' . $whatsapp;
+            }
+        @endphp
+
+        <a href="https://wa.me/{{ $whatsapp }}" target="_blank" class="whatsapp-btn">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>

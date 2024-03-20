@@ -197,12 +197,17 @@
                                 <!-- list-single-main-item -->
                                 <div class="list-single-main-item fl-wrap block_box">
                                     <div class="list-single-main-item-title">
-                                        <h3>Vídeo</h3>
+                                        <h3>Vídeos</h3>
                                     </div>
                                     <div class="list-single-main-item_content fl-wrap">
-                                        <div class="listing-features fl-wrap">
-                                            <iframe width="100%" height="315" src="{{ str_replace('watch?v=', 'embed/', $company->video_link) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        </div>
+                                        @php
+                                            $videos = explode(',', $company->video_link);
+                                        @endphp
+                                        @foreach ($videos as $video)
+                                            <div class="listing-features fl-wrap">
+                                                <iframe width="100%" height="315" src="{{ str_replace('watch?v=', 'embed/', $video) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <!-- list-single-main-item end -->
