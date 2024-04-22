@@ -357,7 +357,7 @@
                         <p class="pb-3" style="font-size: 28px; margin-bottom: 40px">
                             Ter um site personalizado é a melhor forma de uma empresa mostrar a sua identidade e se comunicar com a sua persona. Nós somos especialistas na criação de sites e à partir de um planejamento, vamos desenvolver o seu site de acordo com a imagem e o conteúdo que você deseja.
                         </p>
-                        <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
+                        <a href="mailto:contato@lista11.com.br" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
                 </div>
                 <div class="row">
@@ -378,7 +378,7 @@
                             Sua identidade digital é um fator determinante para o cliente te escolher. Sua rede social é a sua vitrine. Então, que tal deixar sua vitrine mais profissional?<br />
                             Você não precisa se preocupar com nada. Cuide dos seus negócios enquanto cuidamos da sua presença digital.
                         </p>
-                        <a href="https://www.lista11.com.br/empresa-confianca-google-programa-trusted" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
+                        <a href="mailto:contato@lista11.com.br" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
                     <div class="col-md-6 mobile-hidden">
                         <img src="images/redes-sociais.webp" class="img-fluid" alt="Marketing Digital - Destacando sua empresa na internet." title="Marketing Digital - Destacando sua empresa na internet.">
@@ -418,7 +418,7 @@
                             Fuja do amadorismo digital. Aumente o faturamento de seu negocio com as melhores estratégias de trafego pago.<br />
                             Somos uma agencia com mais de 10 anos no mercado especializada em estratégias eficazes no google ads, otimizando cada campanha para atingir seus objetivos.
                         </p>
-                        <a href="https://www.lista11.com.br/fale-conosco" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
+                        <a href="mailto:contato@lista11.com.br" target="_blank" class="btn  dec_btn  color2-bg">Saiba mais<i class="fas fa-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -436,7 +436,7 @@
             <div class="container">
                 <div class="site-options">
                     <div style="background: #4285f4; border-radius: 10px; padding: 100px 0; display: flex; flex: 1; justify-content: center; align-items: center;">
-                        <a target="_blank" href="https://lista11.com.br/anunciar" class="client-item">
+                        <a target="_blank" href="https://lista11.com.br" class="client-item">
                             <img src="images/ico_encontre1.webp" alt="" style="width: auto; height: 80px">
                             <p style="color: white; font-size:20px; margin-top:15px">Lista11</p>
                         </a>

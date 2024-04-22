@@ -75,6 +75,7 @@ class PagesController extends Controller
                     $query->orWhere('state', 'like', '%' . request()->city . '%');
                 });
             })
+            ->latest()
             ->paginate(15)
             ->withQueryString();
 

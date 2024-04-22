@@ -78,19 +78,6 @@ class Company extends Model
         'rating'
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        self::creating(function ($company) {
-            $company->slug = Str::slug($company->name);
-        });
-
-        self::updating(function ($company) {
-            $company->slug = Str::slug($company->name);
-        });
-    }
-
     protected function imageUrl(): Attribute
     {
         return Attribute::get(fn () => $this->image ? asset('storage/' . $this->image) : null);
