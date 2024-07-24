@@ -128,6 +128,8 @@
 
         @include('components.footer')
 
+        @include('components.cookies')
+
         @php
             $whatsapp = isset($company) && $company->whatsapp ? $company->whatsapp : '5511932100079';
             $whatsapp = preg_replace('/\D/', '', $whatsapp);
