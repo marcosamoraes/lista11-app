@@ -7463,7 +7463,7 @@ section.gray-section .section-separator {
 .share-holder.hid-share .share-container {
 	position:absolute;
 	top:-5px;
-	right:0;
+	right:-60px;
 	min-width:170px;
 	background: #425999;
  	box-shadow: 0 9px 26px rgba(58, 87, 135, 0.15);
