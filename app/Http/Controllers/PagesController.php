@@ -15,9 +15,8 @@ class PagesController extends Controller
     public function __construct()
     {
         $footerPosts = Post::take(3)
-            ->inRandomOrder()
+            ->latest()
             ->get();
-
 
         view()->share(compact('footerPosts'));
     }
